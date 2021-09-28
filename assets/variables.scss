@@ -1,0 +1,16 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+$card-overflow-wrap: normal !default;
+$card-title-word-break: normal !default;
+// $font-size-root: 20px;
+// $body-font-family: 'Jost';
+
+$headings: (
+  'h1': (
+    'font-family': 'Jost'
+  ),
+  'h2': (
+    'font-family': 'Jost'
+  )
+);
