@@ -4,7 +4,9 @@
     <v-spacer></v-spacer>
     <v-toolbar-items>
       <nuxt-link to="/">
-        <v-btn class="black--text" height="100%" x-large tile text nuxt>Home</v-btn>
+        <v-btn class="black--text" height="100%" x-large tile text nuxt
+          >Home</v-btn
+        >
       </nuxt-link>
       <v-menu offset-y rounded="0" transition="slide-y-transition">
         <template v-slot:activator="{ on, attrs }">
@@ -15,21 +17,27 @@
         </template>
         <v-list color="#FAFAFA">
           <v-list-item-group>
-            <v-list-item>
-              <v-list-item-title class="black--text"> 1 </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title class="black--text"> 2 </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title class="black--text"> 3 </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title class="black--text"> 4 </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title class="black--text"> 5 </v-list-item-title>
-            </v-list-item>
+            <nuxt-link to="/products/versa_liner">
+              <v-list-item>
+                <v-list-item-title class="black--text" nuxt>
+                  Versa Liner
+                </v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
+            <nuxt-link to="/products/mcast">
+              <v-list-item>
+                <v-list-item-title class="black--text" nuxt>
+                  Mcast
+                </v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
+            <nuxt-link to="/products/thin_brick">
+              <v-list-item>
+                <v-list-item-title class="black--text" nuxt>
+                  Thin Brick
+                </v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
           </v-list-item-group>
         </v-list>
       </v-menu>

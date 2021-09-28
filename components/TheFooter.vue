@@ -22,17 +22,17 @@
         </v-list-item>
       </v-list> -->
       <v-col class="py-4 d-flex justify-space-around" cols="12">
-        <v-btn x-large tile text
+        <v-btn x-large rounded text
           ><v-icon class="pr-2">mdi-email</v-icon>contact@mbrick.com</v-btn
         >
-        <v-btn x-large tile text
+        <v-btn x-large rounded text
           ><v-icon class="pr-2">mdi-phone</v-icon>1-800-413-4588</v-btn
         >
-        <v-btn x-large tile text
+        <v-btn x-large rounded text
           ><v-icon class="pr-2">mdi-home</v-icon>11625 Reed Court Broomfield, CO
           80020</v-btn
         >
-        <v-btn x-large tile text>
+        <v-btn x-large text rounded>
           <v-icon class="pr-2">mdi-clock</v-icon>
           Mon - Fri: 8AM - 5PM MST
         </v-btn>
