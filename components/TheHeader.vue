@@ -2,11 +2,16 @@
   <v-toolbar class="pa-0 ma-0" color="#FAFAFA">
     <v-btn>LOGO HERE</v-btn>
     <v-spacer></v-spacer>
-    <v-toolbar-items>
+    <v-app-bar-nav-icon
+      color="black"
+      v-if="isMobile"
+      @click="openDrawer"
+    ></v-app-bar-nav-icon>
+    <v-toolbar-items v-if="!isMobile">
       <nuxt-link to="/">
-        <v-btn class="black--text" height="100%" x-large tile text nuxt
-          >Home</v-btn
-        >
+        <v-btn class="black--text" height="100%" x-large tile text nuxt>
+          Home
+        </v-btn>
       </nuxt-link>
       <v-menu offset-y rounded="0" transition="slide-y-transition">
         <template v-slot:activator="{ on, attrs }">
@@ -27,7 +32,7 @@
             <nuxt-link to="/products/mcast">
               <v-list-item>
                 <v-list-item-title class="black--text" nuxt>
-                  Mcast
+                  MCAST
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>
@@ -67,13 +72,33 @@
           </v-list-item-group>
         </v-list>
       </v-menu>
-      <v-btn class="black--text" x-large tile text>3D Models</v-btn>
-      <v-btn class="black--text" x-large tile text>Video Tutorials</v-btn>
-      <v-btn class="black--text" x-large tile text>About</v-btn>
-      <v-btn class="black--text" x-large tile text>Contact</v-btn>
+      <!-- TODO adjust links -->
+      <nuxt-link to="/">
+        <v-btn class="black--text" x-large nuxt tile text>3D Models</v-btn>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <v-btn class="black--text" x-large nuxt tile text>Video Tutorials</v-btn>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <v-btn class="black--text" x-large nuxt tile text>About</v-btn>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <v-btn class="black--text" x-large nuxt tile text>Contact</v-btn>
+      </nuxt-link>
     </v-toolbar-items>
   </v-toolbar>
 </template>
+
+<script>
+export default {
+  props: ["isMobile"],
+  methods: {
+    openDrawer() {
+      this.$emit("openDrawer");
+    },
+  },
+};
+</script>
 
 <style>
 a {
