@@ -1,4 +1,4 @@
-# nuxt-vuetify
+# mbrick-site
 
 ## Build Setup
 
