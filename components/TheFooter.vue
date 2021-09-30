@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless>
+  <v-footer padless class="mt-6">
     <v-row justify="center" no-gutters>
       <!-- <v-list>
         <v-list-item>

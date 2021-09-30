@@ -73,10 +73,10 @@
         </v-list>
       </v-menu>
       <!-- TODO adjust links -->
-      <nuxt-link to="/">
+      <nuxt-link to="/3dmodels">
         <v-btn class="black--text" height="100%" nuxt x-large tile text>3D Models</v-btn>
       </nuxt-link>
-      <nuxt-link to="/">
+      <nuxt-link to="/video_tutorials">
         <v-btn class="black--text" height="100%" x-large nuxt tile text>Video Tutorials</v-btn>
       </nuxt-link>
       <nuxt-link to="/">

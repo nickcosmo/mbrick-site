@@ -2,8 +2,8 @@
   <v-row justify="center" align="center">
     <v-col cols="12" class="text-center ma-0 pa-0">
       <!-- prettier-ignore -->
-      <v-img max-height="700" class="d-flex align-center" eager gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212" :src="require('@/static/brick-hero.jpg')">
-          <h2 class="display-2 my-5">INDUSTRY LEADER IN</h2>
+      <v-img max-height="800" class="d-flex align-center" eager gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212" :src="require('@/static/brick-hero.jpg')">
+          <h2 class="display-2 mt-5">INDUSTRY LEADER IN</h2>
           <h1 class="display-4 mt-5">CUSTOM THIN-BRICK DESIGN</h1>
           <p class="headline mt-5">
             Concrete Form Liners for Embedded Brick, Tile, and Stone

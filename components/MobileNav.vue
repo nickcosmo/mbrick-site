@@ -43,12 +43,12 @@
           </nuxt-link>
         </v-list-group>
         <!-- TODO adjust links -->
-        <nuxt-link to="/">
+        <nuxt-link to="/3dmodels">
           <v-list-item nuxt link>
             <v-list-item-title> 3D Models </v-list-item-title>
           </v-list-item>
         </nuxt-link>
-        <nuxt-link to="/">
+        <nuxt-link to="/video_tutorials">
           <v-list-item nuxt link>
             <v-list-item-title> Video Tutorials </v-list-item-title>
           </v-list-item>
