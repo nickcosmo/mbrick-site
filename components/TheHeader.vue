@@ -74,16 +74,16 @@
       </v-menu>
       <!-- TODO adjust links -->
       <nuxt-link to="/">
-        <v-btn class="black--text" x-large nuxt tile text>3D Models</v-btn>
+        <v-btn class="black--text" height="100%" nuxt x-large tile text>3D Models</v-btn>
       </nuxt-link>
       <nuxt-link to="/">
-        <v-btn class="black--text" x-large nuxt tile text>Video Tutorials</v-btn>
+        <v-btn class="black--text" height="100%" x-large nuxt tile text>Video Tutorials</v-btn>
       </nuxt-link>
       <nuxt-link to="/">
-        <v-btn class="black--text" x-large nuxt tile text>About</v-btn>
+        <v-btn class="black--text" height="100%" x-large nuxt tile text>About</v-btn>
       </nuxt-link>
       <nuxt-link to="/">
-        <v-btn class="black--text" x-large nuxt tile text>Contact</v-btn>
+        <v-btn class="black--text" height="100%" x-large nuxt tile text>Contact</v-btn>
       </nuxt-link>
     </v-toolbar-items>
   </v-toolbar>
