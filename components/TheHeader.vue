@@ -1,6 +1,13 @@
 <template>
-  <v-toolbar class="pa-0 ma-0" color="#FAFAFA">
-    <v-btn>LOGO HERE</v-btn>
+  <v-toolbar class="pa-0 ma-0" height="100" color="#FAFAFA">
+    <nuxt-link to="/">
+      <v-img
+        contain
+        height="100%"
+        max-width="180"
+        :src="require('@/static/ibs-black.png')"
+      ></v-img>
+    </nuxt-link>
     <v-spacer></v-spacer>
     <v-app-bar-nav-icon
       color="black"
@@ -74,16 +81,24 @@
       </v-menu>
       <!-- TODO adjust links -->
       <nuxt-link to="/3dmodels">
-        <v-btn class="black--text" height="100%" nuxt x-large tile text>3D Models</v-btn>
+        <v-btn class="black--text" height="100%" nuxt x-large tile text
+          >3D Models</v-btn
+        >
       </nuxt-link>
       <nuxt-link to="/video_tutorials">
-        <v-btn class="black--text" height="100%" x-large nuxt tile text>Video Tutorials</v-btn>
+        <v-btn class="black--text" height="100%" x-large nuxt tile text
+          >Video Tutorials</v-btn
+        >
       </nuxt-link>
       <nuxt-link to="/">
-        <v-btn class="black--text" height="100%" x-large nuxt tile text>About</v-btn>
+        <v-btn class="black--text" height="100%" x-large nuxt tile text
+          >About</v-btn
+        >
       </nuxt-link>
       <nuxt-link to="/">
-        <v-btn class="black--text" height="100%" x-large nuxt tile text>Contact</v-btn>
+        <v-btn class="black--text" height="100%" x-large nuxt tile text
+          >Contact</v-btn
+        >
       </nuxt-link>
     </v-toolbar-items>
   </v-toolbar>
