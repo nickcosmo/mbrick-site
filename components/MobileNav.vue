@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer temporary app absolute right v-model="status">
     <v-list nav>
-      <v-list-item-group v-model="group">
+      <v-list-item-group>
         <nuxt-link to="/">
           <v-list-item nuxt link>
             <v-list-item-title> Home </v-list-item-title>
@@ -80,7 +80,6 @@ export default {
   },
   watch: {
     open(newVal, oldVal) {
-      console.log(this.open);
       if (newVal) {
         this.status = true;
       } else {
