@@ -57,8 +57,7 @@ export default {
   asyncData(context) {
     return context.app.$storyapi
       .get("cdn/stories", {
-        // TODO adjust this based on env
-        version: "draft",
+        version: context.isDev ? "draft" : "published",
         starts_with: "tiltupprojects/",
       })
       .then((res) => {
