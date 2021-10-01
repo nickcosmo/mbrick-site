@@ -9,7 +9,7 @@
         fixed
         bottom
         right
-        v-if="belowTop"
+        v-if="belowTop && !isMobile"
         @click="toTop"
       >
         <v-icon>mdi-arrow-up</v-icon>
@@ -17,9 +17,9 @@
       <!-- <TopBar /> -->
       <TheHeader :isMobile="isMobile" @openDrawer="triggerDrawer" />
       <v-container fluid>
-        <Nuxt />
+        <Nuxt :isMobile="isMobile"/>
       </v-container>
-      <TheFooter />
+      <TheFooter :isMobile="isMobile" />
     </v-main>
   </v-app>
 </template>
@@ -34,20 +34,20 @@ export default {
   data() {
     return {
       belowTop: false,
-      showDrawer: false
+      showDrawer: false,
+      isMobile: false,
     };
   },
-  computed: {
-    isMobile() {
-      if (this.$vuetify.breakpoint.mobile) {
-        return true;
-      }
-      return false;
-    },
-  },
   methods: {
+    checkMobile() {
+      if (["xs", "sm"].indexOf(this.$vuetify.breakpoint.name) > -1) {
+        this.isMobile = true;
+      } else {
+        this.isMobile = false;
+      }
+    },
     triggerDrawer() {
-      this.showDrawer = !this.showDrawer
+      this.showDrawer = !this.showDrawer;
     },
     topCheck() {
       return window.pageYOffset > 0
@@ -67,6 +67,7 @@ export default {
   mounted() {
     window.onNuxtReady(() => {
       this.topCheck();
+      this.checkMobile();
     });
   },
 };
