@@ -90,10 +90,10 @@
           >Video Tutorials</v-btn
         >
       </nuxt-link>
-      <nuxt-link to="/">
-        <v-btn class="black--text" height="100%" x-large nuxt tile text
-          >About</v-btn
-        >
+      <nuxt-link to="/about">
+        <v-btn class="black--text" height="100%" x-large nuxt tile text>
+          About
+        </v-btn>
       </nuxt-link>
       <nuxt-link to="/">
         <v-btn class="black--text" height="100%" x-large nuxt tile text

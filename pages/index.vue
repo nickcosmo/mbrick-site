@@ -2,7 +2,7 @@
   <v-row justify="center" align="center">
     <v-col cols="12" class="text-center ma-0 pa-0">
       <!-- prettier-ignore -->
-      <v-img max-height="800" width="100%" class="d-flex align-center mb-10" eager gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212" :src="require('@/static/brick-2.jpg')">
+      <v-img max-height="700" width="100%" class="d-flex align-center mb-10" eager gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212" :src="require('@/static/brick-2.jpg')">
           <h2 class="text-md-h2 text-sm-h3 text-h4 mt-5">INDUSTRY LEADER IN</h2>
           <h1 class="text-md-h1 text-h2 mt-5">CUSTOM THIN-BRICK DESIGN</h1>
           <p class="text-md-h5 text-h6 mt-5">
@@ -137,6 +137,9 @@ export default {
     window.onNuxtReady(() => {
       this.setImageHeight();
     });
+  },
+  created() {
+    this.setImageHeight();
   },
 };
 </script>

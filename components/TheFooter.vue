@@ -6,7 +6,7 @@
         cols="12"
       >
         <v-btn
-          class="my-md-0 my-1 mx-0 pa-0"
+          class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
           :medium="isMobile"
           rounded
@@ -14,7 +14,7 @@
           ><v-icon class="pr-2">mdi-email</v-icon>contact@mbrick.com</v-btn
         >
         <v-btn
-          class="my-md-0 my-1 mx-0 pa-0"
+          class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
           :medium="isMobile"
           rounded
@@ -22,7 +22,7 @@
           ><v-icon class="pr-2">mdi-phone</v-icon>1-800-413-4588</v-btn
         >
         <v-btn
-          class="my-md-0 my-1 mx-0 pa-0"
+          class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
           :medium="isMobile"
           rounded
@@ -33,7 +33,7 @@
           80020
         </v-btn>
         <v-btn
-          class="my-md-0 my-1 mx-0 pa-0"
+          class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
           :medium="isMobile"
           text

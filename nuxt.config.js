@@ -3,8 +3,8 @@ import colors from "vuetify/es5/util/colors";
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - nuxt-vuetify",
-    title: "nuxt-vuetify",
+    titleTemplate: "%s - MBRICK",
+    title: "MBRICK",
     htmlAttrs: {
       lang: "en"
     },

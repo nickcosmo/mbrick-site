@@ -53,7 +53,7 @@
             <v-list-item-title> Video Tutorials </v-list-item-title>
           </v-list-item>
         </nuxt-link>
-        <nuxt-link to="/">
+        <nuxt-link to="/about">
           <v-list-item nuxt link>
             <v-list-item-title> About </v-list-item-title>
           </v-list-item>

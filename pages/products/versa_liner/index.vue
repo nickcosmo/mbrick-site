@@ -5,7 +5,7 @@
         max-height="300"
         class="d-flex justify-center align-center text-center display-4"
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
-        :src="require('@/static/brick-hero.jpg')"
+        :src="require('@/static/brick-2.jpg')"
       >
         VERSA LINER
       </v-img>
