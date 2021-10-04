@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols="12 ma-0 pa-0">
+    <v-col cols="12" class="ma-0 pa-0">
       <v-img
         max-height="300"
         class="d-flex justify-center align-center text-center display-4"

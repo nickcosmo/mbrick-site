@@ -40,13 +40,15 @@
         </v-card>
       </v-col>
       <v-col cols="4">
-        <v-img
-          class="mx-auto"
-          height="400"
-          max-height="700"
-          max-width="700"
-          :src="project.imageUrl"
-        ></v-img>
+        <nuxt-link :to="'/projects/precast/' + project.slug">
+          <v-img
+            class="mx-auto"
+            height="400"
+            max-height="700"
+            max-width="700"
+            :src="project.imageUrl"
+          ></v-img>
+        </nuxt-link>
       </v-col>
     </v-row>
   </v-row>
@@ -61,6 +63,7 @@ export default {
         starts_with: "tiltupprojects/",
       })
       .then((res) => {
+        console.log(res.data.stories);
         return {
           projects: res.data.stories.map((item) => {
             return {
@@ -71,6 +74,7 @@ export default {
               precaster: item.content.precaster,
               imageUrl: item.content.image.filename,
               date: item.content.date,
+              slug: item.slug
             };
           }),
         };

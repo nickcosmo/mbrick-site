@@ -86,7 +86,7 @@
       </v-row>
       <v-divider></v-divider>
       <v-row class="no-gutters">
-        <v-col class="col-md-4 mx-auto my-4 col-12 text-center">
+        <v-col class="col-md-6 mx-auto my-4 col-12 text-center">
           <v-card
             class="elevation-0 transparent d-flex flex-column align-center"
           >
@@ -125,7 +125,7 @@ export default {
           this.imageHeight = 300;
           break;
         case "lg":
-          this.imageHeight = 500;
+          this.imageHeight = 400;
           break;
         case "xl":
           this.imageHeight = 500;
