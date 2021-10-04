@@ -10,44 +10,40 @@
         PRECAST
       </v-img>
     </v-col>
-    <v-row
-      v-for="(project, i) in projects"
-      :key="project.id"
-      class="pa-0 ma-0 col-12 align-center justify-center"
-    >
-      <v-col v-if="i > 0" cols="12">
-        <v-divider></v-divider>
+    <v-row class="px-md-0 px-10">
+      <v-col class="col-12 col-md-6 mx-auto">
+        <p class="text-md-h6 text-subtitle-1">
+          Our precast technology is state of the art. Just ask Roy Donk, he was
+          a regular on the colgate comedy hour and used to play jazz flute with
+          a kink.
+        </p>
       </v-col>
-      <v-col cols="4">
-        <v-card height="400">
-          <v-card-title class="display-1">{{ project.title }}</v-card-title>
-          <v-card-text>
-            <v-list>
-              <v-list-item class="headline">{{
-                project.description
-              }}</v-list-item>
-              <v-list-item class="headline"
-                >Location: {{ project.location }}</v-list-item
-              >
-              <v-list-item class="headline"
-                >Precaster: {{ project.precaster }}</v-list-item
-              >
-              <v-list-item class="headline"
-                >Completion Date: {{ project.date }}</v-list-item
-              >
-            </v-list>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="4">
-        <nuxt-link :to="'/projects/precast/' + project.slug">
+    </v-row>
+    <v-row>
+      <v-col cols="12" class="d-flex flex-wrap justify-center">
+        <nuxt-link
+          v-for="project in getProjects"
+          :key="project.id"
+          :to="'/projects/precast/' + project.id"
+        >
           <v-img
-            class="mx-auto"
-            height="400"
-            max-height="700"
-            max-width="700"
-            :src="project.imageUrl"
-          ></v-img>
+            class="ma-5 image-hover align-center text-center"
+            :src="project.images[0].filename"
+            height="352"
+            max-width="500"
+          >
+            <div
+              style="
+                height: 100%;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+              "
+            >
+              <h3 class="text-md-h3 text-sm-h4 text-h5 text-uppercase">
+                {{ project.title }}
+              </h3>
+            </div>
+          </v-img>
         </nuxt-link>
       </v-col>
     </v-row>
@@ -55,33 +51,43 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   asyncData(context) {
+    if (context.store.state.projects.length) {
+      return null;
+    }
     return context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
         starts_with: "tiltupprojects/",
       })
       .then((res) => {
-        console.log(res.data.stories);
-        return {
-          projects: res.data.stories.map((item) => {
+        context.store.dispatch(
+          "fetchAllProjects",
+          res.data.stories.map((item) => {
             return {
               id: item.content._uid,
               title: item.content.title,
               description: item.content.description,
               location: item.content.location,
               precaster: item.content.precaster,
-              imageUrl: item.content.image.filename,
+              images: Array.isArray(item.content.image)
+                ? item.content.image
+                : [item.content.image],
               date: item.content.date,
-              slug: item.slug
+              slug: item.slug,
             };
-          }),
-        };
+          })
+        );
       })
       .catch((err) => {
         console.error(err);
       });
+  },
+  computed: {
+    ...mapGetters(["getProjects"]),
   },
 };
 </script>
