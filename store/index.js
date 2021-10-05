@@ -1,19 +1,29 @@
 export const state = () => ({
-  projects: []
+  projects: {
+    precast: [],
+    tiltup: []
+  }
 });
 
 export const getters = {
-  getProjects: state => state.projects,
-  getSingleProject: state => projectId =>
-    state.projects.find(project => (project.id === projectId))
+  getPrecastProjects: state => state.projects.precast,
+  getSinglePrecastProject: state => projectId =>
+    state.projects.precast.find(project => project.id === projectId),
+  getTiltUpProjects: state => state.projects.tiltup,
+  getSingleTiltUpProject: state => projectId =>
+    state.projects.tiltup.find(project => project.id === projectId)
 };
 
 export const mutations = {
-  setProjects: (state, payload) => (state.projects = payload)
+  setPrecastProjects: (state, payload) => (state.projects["precast"] = payload),
+  setTiltUpProjects: (state, payload) => (state.projects["tiltup"] = payload)
 };
 
 export const actions = {
-  fetchAllProjects({ commit }, payload) {
-    commit("setProjects", payload);
+  fetchPrecastProjects({ commit }, payload) {
+    commit("setPrecastProjects", payload);
+  },
+  fetchTiltUpProjects({ commit }, payload) {
+    commit("setTiltUpProjects", payload);
   }
 };

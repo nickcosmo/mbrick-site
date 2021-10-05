@@ -12,17 +12,19 @@
     </v-col>
     <v-row class="px-md-0 px-10">
       <v-col class="col-12 col-md-6 mx-auto">
-        <p class="text-md-h6 text-subtitle-1">
+        <v-divider></v-divider>
+        <p class="text-md-h6 text-subtitle-1 my-5 text-justify">
           Our precast technology is state of the art. Just ask Roy Donk, he was
           a regular on the colgate comedy hour and used to play jazz flute with
           a kink.
         </p>
+        <v-divider></v-divider>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="12" class="d-flex flex-wrap justify-center">
         <nuxt-link
-          v-for="project in getProjects"
+          v-for="project in getPrecastProjects"
           :key="project.id"
           :to="'/projects/precast/' + project.id"
         >
@@ -55,17 +57,17 @@ import { mapGetters } from "vuex";
 
 export default {
   asyncData(context) {
-    if (context.store.state.projects.length) {
+    if (context.store.state.projects.precast.length) {
       return null;
     }
     return context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
-        starts_with: "tiltupprojects/",
+        starts_with: "precast-projects/",
       })
       .then((res) => {
         context.store.dispatch(
-          "fetchAllProjects",
+          "fetchPrecastProjects",
           res.data.stories.map((item) => {
             return {
               id: item.content._uid,
@@ -87,7 +89,7 @@ export default {
       });
   },
   computed: {
-    ...mapGetters(["getProjects"]),
+    ...mapGetters(["getPrecastProjects"]),
   },
 };
 </script>

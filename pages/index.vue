@@ -1,18 +1,23 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" class="text-center ma-0 pa-0">
-      <!-- prettier-ignore -->
-      <v-img max-height="700" width="100%" class="d-flex align-center mb-10" eager gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212" :src="require('@/static/brick-2.jpg')">
-          <h2 class="text-md-h2 text-sm-h3 text-h4 mt-5">INDUSTRY LEADER IN</h2>
-          <h1 class="text-md-h1 text-h2 mt-5">CUSTOM THIN-BRICK DESIGN</h1>
-          <p class="text-md-h5 text-h6 mt-5">
-            Concrete Form Liners for Embedded Brick, Tile, and Stone
-            Applications
-          </p>
-          <v-btn large rounded color="white" class="black--text my-5">
-            call now 1-800-413-4588
-          </v-btn>
-        </v-img>
+      <v-img
+        max-height="700"
+        width="100%"
+        class="d-flex align-center mb-10"
+        eager
+        gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
+        :src="require('@/static/brick-2.jpg')"
+      >
+        <h2 class="text-md-h2 text-sm-h3 text-h4 mt-5">INDUSTRY LEADER IN</h2>
+        <h1 class="text-md-h1 text-h2 mt-5">CUSTOM THIN-BRICK DESIGN</h1>
+        <p class="text-md-h5 text-h6 mt-5">
+          Concrete Form Liners for Embedded Brick, Tile, and Stone Applications
+        </p>
+        <v-btn large rounded color="white" class="black--text my-5">
+          call now 1-800-413-4588
+        </v-btn>
+      </v-img>
       <v-row
         class="mt-md-12 mx-md-12 mx-3 mt-3 flex-column-reverse flex-md-row"
       >
@@ -46,6 +51,7 @@
           </v-card>
         </v-col>
         <v-col class="col-12 col-md-5">
+          <!-- TODO Update images from Mbrick archive -->
           <!-- prettier-ignore -->
           <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" src="https://images.unsplash.com/photo-1614350646685-157ee8e4a25e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJyaWNrJTIwYnVpbGRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></v-img>
         </v-col>

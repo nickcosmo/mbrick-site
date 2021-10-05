@@ -56,7 +56,7 @@
 <script>
 export default {
   asyncData(context) {
-    if (context.store.state.projects.precast.length) {
+    if (context.store.state.projects.tiltup.length) {
       return {
         images: [],
       };
@@ -66,7 +66,7 @@ export default {
   },
   computed: {
     project() {
-      return this.$store.getters.getSinglePrecastProject(
+      return this.$store.getters.getSingleTiltUpProject(
         this.$route.params.projectid
       );
     },

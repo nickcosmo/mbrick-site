@@ -17,7 +17,7 @@
       <!-- <TopBar /> -->
       <TheHeader :isMobile="isMobile" @openDrawer="triggerDrawer" />
       <v-container fluid>
-        <Nuxt :isMobile="isMobile"/>
+        <Nuxt :isMobile="isMobile" />
       </v-container>
       <TheFooter :isMobile="isMobile" />
     </v-main>
@@ -31,6 +31,7 @@ import TheFooter from "@/components/TheFooter.vue";
 import MobileNav from "@/components/MobileNav.vue";
 
 export default {
+  name: "default",
   data() {
     return {
       belowTop: false,

@@ -49,6 +49,7 @@
               </v-card>
             </v-col>
             <v-col class="col-12 col-md-5">
+              <!-- TODO Update images from mbrick archive -->
               <!-- prettier-ignore -->
               <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" src="https://images.unsplash.com/photo-1614350646685-157ee8e4a25e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJyaWNrJTIwYnVpbGRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></v-img>
             </v-col>
