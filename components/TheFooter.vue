@@ -8,7 +8,7 @@
         <v-btn
           class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
-          :medium="isMobile"
+          :small="isMobile"
           rounded
           text
           ><v-icon class="pr-2">mdi-email</v-icon>contact@mbrick.com</v-btn
@@ -16,7 +16,7 @@
         <v-btn
           class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
-          :medium="isMobile"
+          :small="isMobile"
           rounded
           text
           ><v-icon class="pr-2">mdi-phone</v-icon>1-800-413-4588</v-btn
@@ -24,18 +24,18 @@
         <v-btn
           class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
-          :medium="isMobile"
+          :small="isMobile"
+          :block="isMobile"
           rounded
           text
           style="overflow: hidden"
         >
-          <v-icon class="pr-2">mdi-home</v-icon>11625 Reed Court Broomfield, CO
-          80020
+          <v-icon class="pr-2">mdi-home</v-icon>11625 Reed Court Broomfield CO
         </v-btn>
         <v-btn
           class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
-          :medium="isMobile"
+          :small="isMobile"
           text
           rounded
         >
