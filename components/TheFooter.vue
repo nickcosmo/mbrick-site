@@ -9,6 +9,7 @@
           class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
           :small="isMobile"
+          :block="isMobile"
           rounded
           text
           ><v-icon class="pr-2">mdi-email</v-icon>contact@mbrick.com</v-btn
@@ -17,6 +18,7 @@
           class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
           :small="isMobile"
+          :block="isMobile"
           rounded
           text
           ><v-icon class="pr-2">mdi-phone</v-icon>1-800-413-4588</v-btn
@@ -36,6 +38,7 @@
           class="my-md-0 my-1 mx-0 px-3"
           :x-large="!isMobile"
           :small="isMobile"
+          :block="isMobile"
           text
           rounded
         >
