@@ -10,43 +10,11 @@
         MCAST
       </v-img>
     </v-col>
-    <v-row
-      v-for="(project, i) in projects"
-      :key="project.id"
-      class="pa-0 ma-0 col-12 align-center justify-center"
-    >
-      <v-col v-if="i > 0" cols="12">
-        <v-divider></v-divider>
-      </v-col>
+    <v-row class="pa-0 ma-0 col-12 align-center justify-center">
       <v-col cols="4">
         <v-card height="400">
-          <v-card-title class="display-1">{{ project.title }}</v-card-title>
-          <v-card-text>
-            <v-list>
-              <v-list-item class="headline">{{
-                project.description
-              }}</v-list-item>
-              <v-list-item class="headline"
-                >Location: {{ project.location }}</v-list-item
-              >
-              <v-list-item class="headline"
-                >Precaster: {{ project.precaster }}</v-list-item
-              >
-              <v-list-item class="headline"
-                >Completion Date: {{ project.date }}</v-list-item
-              >
-            </v-list>
-          </v-card-text>
+          <v-card-title class="display-1">Coming Soon...</v-card-title>
         </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-img
-          class="mx-auto"
-          height="400"
-          max-height="700"
-          max-width="700"
-          :src="project.imageUrl"
-        ></v-img>
       </v-col>
     </v-row>
   </v-row>
@@ -54,30 +22,31 @@
 
 <script>
 export default {
-  asyncData(context) {
-    return context.app.$storyapi
-      .get("cdn/stories", {
-        version: context.isDev ? "draft" : "published",
-        starts_with: "tiltupprojects/",
-      })
-      .then((res) => {
-        return {
-          projects: res.data.stories.map((item) => {
-            return {
-              id: item.content._uid,
-              title: item.content.title,
-              description: item.content.description,
-              location: item.content.location,
-              precaster: item.content.precaster,
-              imageUrl: item.content.image.filename,
-              date: item.content.date,
-            };
-          }),
-        };
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  },
+  // TODO Add products to storyblok
+  // asyncData(context) {
+  //   return context.app.$storyapi
+  //     .get("cdn/stories", {
+  //       version: context.isDev ? "draft" : "published",
+  //       starts_with: "tiltupprojects/",
+  //     })
+  //     .then((res) => {
+  //       return {
+  //         projects: res.data.stories.map((item) => {
+  //           return {
+  //             id: item.content._uid,
+  //             title: item.content.title,
+  //             description: item.content.description,
+  //             location: item.content.location,
+  //             precaster: item.content.precaster,
+  //             imageUrl: item.content.image.filename,
+  //             date: item.content.date,
+  //           };
+  //         }),
+  //       };
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // },
 };
 </script>
