@@ -18,7 +18,7 @@
       </v-img>
       <v-row no-gutters class="align-center justify-center px-10 px-md-0">
         <v-col class="col-12 col-md-6">
-          <v-card class="pa-3">
+          <v-card class="pa-0">
             <v-carousel :show-arrows="false">
               <v-carousel-item v-for="image in images" :key="image.id">
                 <v-img

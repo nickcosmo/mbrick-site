@@ -19,7 +19,7 @@
       </v-img>
       <v-row no-gutters class="align-center justify-center px-10 px-md-0">
         <v-col class="col-12 col-md-6">
-          <v-card class="pa-3">
+          <v-card class="pa-0">
             <v-carousel cycle :height="imageHeight" :show-arrows="true" hide-delimiters>
               <v-carousel-item v-for="image in images" :key="image.id">
                 <v-img
@@ -69,7 +69,7 @@ export default {
     setImageHeight() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          this.imageHeight = 200;
+          this.imageHeight = 300;
           break;
         case "sm":
           this.imageHeight = 300;
