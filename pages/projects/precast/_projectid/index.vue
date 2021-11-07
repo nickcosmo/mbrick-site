@@ -8,7 +8,8 @@
           justify-center
           align-center
           text-center
-          display-4
+          text-md-h1
+          text-h2
           text-uppercase
         "
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
@@ -19,29 +20,28 @@
       <v-row no-gutters class="align-center justify-center px-10 px-md-0">
         <v-col class="col-12 col-md-6">
           <v-card class="pa-3">
-            <v-carousel :show-arrows="false">
+            <v-carousel cycle :height="imageHeight" :show-arrows="true" hide-delimiters>
               <v-carousel-item v-for="image in images" :key="image.id">
                 <v-img
                   class="mx-auto"
                   width="100%"
-                  max-height="700"
-                  max-width="700"
+                  :height="imageHeight"
                   :src="image.filename"
                 ></v-img>
               </v-carousel-item>
             </v-carousel>
-            <v-card-text>
-              <v-list>
-                <v-list-item class="text-subtitle-1 text-md-h6">
+            <v-card-text class="pb-0">
+              <v-list class="pa-0">
+                <v-list-item class="px-0 text-subtitle-1 text-md-h6">
                   {{ project.description }}
                 </v-list-item>
-                <v-list-item class="text-subtitle-1 text-md-h6">
+                <v-list-item class="px-0 text-subtitle-1 text-md-h6">
                   Location: {{ project.location }}
                 </v-list-item>
-                <v-list-item class="text-subtitle-1 text-md-h6">
+                <v-list-item class="px-0 text-subtitle-1 text-md-h6">
                   Precaster: {{ project.precaster }}
                 </v-list-item>
-                <v-list-item class="text-subtitle-1 text-md-h6">
+                <v-list-item class="px-0 text-subtitle-1 text-md-h6">
                   Completion Date: {{ project.date }}
                 </v-list-item>
               </v-list>
@@ -58,10 +58,32 @@ export default {
   asyncData(context) {
     if (context.store.state.projects.precast.length) {
       return {
-        images: []
+        images: [],
+        imageHeight: null
       };
     } else {
       context.redirect("/");
+    }
+  },
+  methods: {
+    setImageHeight() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          this.imageHeight = 200;
+          break;
+        case "sm":
+          this.imageHeight = 300;
+          break;
+        case "md":
+          this.imageHeight = 400;
+          break;
+        case "lg":
+          this.imageHeight = 500;
+          break;
+        case "xl":
+          this.imageHeight = 600;
+          break;
+      }
     }
   },
   computed: {
@@ -71,8 +93,14 @@ export default {
       );
     }
   },
+  mounted() {
+    window.onNuxtReady(() => {
+      this.setImageHeight();
+    });
+  },
   created() {
     this.images = this.project.images;
+    this.setImageHeight();
   }
 };
 </script>
