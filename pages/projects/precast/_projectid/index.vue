@@ -58,7 +58,7 @@ export default {
   asyncData(context) {
     if (context.store.state.projects.precast.length) {
       return {
-        images: [],
+        images: []
       };
     } else {
       context.redirect("/");
@@ -69,10 +69,10 @@ export default {
       return this.$store.getters.getSinglePrecastProject(
         this.$route.params.projectid
       );
-    },
+    }
   },
   created() {
     this.images = this.project.images;
-  },
+  }
 };
 </script>
