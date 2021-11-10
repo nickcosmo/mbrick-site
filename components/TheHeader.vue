@@ -79,7 +79,6 @@
           </v-list-item-group>
         </v-list>
       </v-menu>
-      <!-- TODO adjust links -->
       <nuxt-link to="/3dmodels">
         <v-btn class="black--text" height="100%" nuxt x-large tile text
           >3D Models</v-btn
@@ -95,10 +94,10 @@
           About
         </v-btn>
       </nuxt-link>
-      <nuxt-link to="/">
-        <v-btn class="black--text" height="100%" x-large nuxt tile text
-          >Contact</v-btn
-        >
+      <nuxt-link to="/contact">
+        <v-btn class="black--text" height="100%" x-large nuxt tile text>
+          Contact
+        </v-btn>
       </nuxt-link>
     </v-toolbar-items>
   </v-toolbar>
