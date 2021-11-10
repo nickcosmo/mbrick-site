@@ -42,7 +42,6 @@
             </v-list-item>
           </nuxt-link>
         </v-list-group>
-        <!-- TODO adjust links -->
         <nuxt-link to="/3dmodels">
           <v-list-item nuxt link>
             <v-list-item-title> 3D Models </v-list-item-title>
@@ -58,7 +57,7 @@
             <v-list-item-title> About </v-list-item-title>
           </v-list-item>
         </nuxt-link>
-        <nuxt-link to="/">
+        <nuxt-link to="/contact">
           <v-list-item nuxt link>
             <v-list-item-title> Contact </v-list-item-title>
           </v-list-item>
