@@ -1,17 +1,18 @@
 <template>
   <v-row>
     <v-col cols="12 ma-0 pa-0">
+      <!-- TODO adjust height based on mobile! -->
       <v-img
         max-height="300"
-        class="d-flex justify-center align-center text-center display-4"
+        class="d-flex justify-center align-center text-center text-sm-h1 text-h2"
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
         :src="require('@/static/brick-2.jpg')"
       >
         PRECAST
       </v-img>
     </v-col>
-    <v-row class="px-md-0 px-10">
-      <v-col class="col-12 col-md-6 mx-auto">
+    <v-row class="ma-0">
+      <v-col class="col-12 col-sm-6 mx-auto px-0">
         <v-divider></v-divider>
         <p class="text-md-h6 text-subtitle-1 my-5 text-justify">
           Our precast technology is state of the art. Just ask Roy Donk, he was
@@ -21,9 +22,10 @@
         <v-divider></v-divider>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="12" class="d-flex flex-wrap justify-center">
+    <v-row class="ma-0">
+      <v-col cols="12" class="ma-0 pa-0 d-flex flex-wrap justify-center">
         <nuxt-link
+          style="padding: 0; margin: 0;"
           v-for="project in getPrecastProjects"
           :key="project.id"
           :to="'/projects/precast/' + project.id"
@@ -31,7 +33,9 @@
           <v-img
             class="ma-5 image-hover align-center text-center"
             :src="project.images[0].filename"
-            height="352"
+            :height="getThumbnailImageHeight"
+            :width="getThumbnailImageWidth"
+            max-height="400"
             max-width="500"
           >
             <div
@@ -63,12 +67,12 @@ export default {
     return context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
-        starts_with: "precast-projects/",
+        starts_with: "precast-projects/"
       })
-      .then((res) => {
+      .then(res => {
         context.store.dispatch(
           "fetchPrecastProjects",
-          res.data.stories.map((item) => {
+          res.data.stories.map(item => {
             return {
               id: item.content._uid,
               title: item.content.title,
@@ -79,17 +83,21 @@ export default {
                 ? item.content.image
                 : [item.content.image],
               date: item.content.date,
-              slug: item.slug,
+              slug: item.slug
             };
           })
         );
       })
-      .catch((err) => {
+      .catch(err => {
         console.error(err);
       });
   },
   computed: {
-    ...mapGetters(["getPrecastProjects"]),
-  },
+    ...mapGetters({
+      getPrecastProjects: "getPrecastProjects",
+      getThumbnailImageHeight: "images/getThumbnailImageHeight",
+      getThumbnailImageWidth: "images/getThumbnailImageWidth"
+    })
+  }
 };
 </script>

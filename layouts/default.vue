@@ -2,7 +2,8 @@
   <v-app dark v-scroll="topCheck">
     <MobileNav @close="showDrawer = false" v-if="isMobile" :open="showDrawer" />
     <v-main>
-      <v-btn
+      <!-- TODO Add in scroll top button -->
+      <!-- <v-btn
         style="z-index: 500"
         fab
         x-large
@@ -13,7 +14,7 @@
         @click="toTop"
       >
         <v-icon>mdi-arrow-up</v-icon>
-      </v-btn>
+      </v-btn> -->
       <!-- <TopBar /> -->
       <TheHeader :isMobile="isMobile" @openDrawer="triggerDrawer" />
       <v-container fluid>
@@ -36,15 +37,54 @@ export default {
     return {
       belowTop: false,
       showDrawer: false,
-      isMobile: false,
+      isMobile: false
     };
   },
   methods: {
+    setThumbnailImageHeight() {
+      let imageHeight;
+      let imageWidth;
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          imageHeight = 200;
+          imageWidth = 300;
+          break;
+        case "sm":
+          imageHeight = 200;
+          imageWidth = 300;
+          break;
+        case "md":
+          imageHeight = 300;
+          imageWidth = "100%";
+          break;
+        case "lg":
+          imageHeight = 350;
+          imageWidth = "100%";
+          break;
+        case "xl":
+          imageHeight = 350;
+          imageWidth = "100%";
+          break;
+      }
+      this.$store.dispatch("images/updateThumbnailData", {
+        height: imageHeight,
+        width: imageWidth
+      });
+    },
     checkMobile() {
-      if (["xs", "sm"].indexOf(this.$vuetify.breakpoint.name) > -1) {
-        this.isMobile = true;
-      } else {
-        this.isMobile = false;
+      // if (["xs", "sm"].indexOf(this.$vuetify.breakpoint.name) > -1) {
+      //   this.isMobile = true;
+      // } else {
+      //   this.isMobile = false;
+      // }
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+        case "sm":
+        case "md":
+          this.isMobile = true;
+          break;
+        default:
+          this.isMobile = false;
       }
     },
     triggerDrawer() {
@@ -57,20 +97,42 @@ export default {
     },
     toTop() {
       return this.$vuetify.goTo(0);
-    },
+    }
   },
   components: {
     TopBar,
     TheHeader,
     TheFooter,
-    MobileNav,
+    MobileNav
   },
   mounted() {
     window.onNuxtReady(() => {
       this.topCheck();
       this.checkMobile();
+      this.setThumbnailImageHeight();
+      window.addEventListener(
+        "resize",
+        () => {
+          switch (this.$vuetify.breakpoint.name) {
+            case "xs":
+            case "sm":
+            case "md":
+              this.isMobile = true;
+              break;
+            default:
+              this.isMobile = false;
+          }
+        },
+        { passive: true }
+      );
     });
   },
+  beforeDestroy() {
+    window.removeEventListener("resize");
+  },
+  created() {
+    this.setThumbnailImageHeight();
+  }
 };
 </script>
 
