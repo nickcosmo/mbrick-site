@@ -14,9 +14,11 @@
         <p class="text-md-h5 text-h6 mt-5">
           Concrete Form Liners for Embedded Brick, Tile, and Stone Applications
         </p>
-        <v-btn large rounded color="white" class="black--text my-5">
-          call now 1-800-413-4588
-        </v-btn>
+        <a href="tel:1-800-413-4588">
+          <v-btn large rounded color="white" class="black--text my-5">
+            call now 1-800-413-4588
+          </v-btn>
+        </a>
       </v-img>
       <v-row
         class="mt-md-12 mx-md-12 mx-3 mt-3 flex-column-reverse flex-md-row"
@@ -115,7 +117,7 @@
 export default {
   data() {
     return {
-      imageHeight: null,
+      imageHeight: null
     };
   },
   methods: {
@@ -137,7 +139,7 @@ export default {
           this.imageHeight = 500;
           break;
       }
-    },
+    }
   },
   mounted() {
     window.onNuxtReady(() => {
@@ -146,6 +148,6 @@ export default {
   },
   created() {
     this.setImageHeight();
-  },
+  }
 };
 </script>
