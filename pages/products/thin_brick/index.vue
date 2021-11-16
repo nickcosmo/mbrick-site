@@ -3,7 +3,7 @@
     <v-col cols="12 ma-0 pa-0">
       <v-img
         max-height="300"
-        class="d-flex justify-center align-center text-center display-4"
+        class="d-flex justify-center align-center text-center  text-md-h1 text-h2"
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
         :src="require('@/static/brick-2.jpg')"
       >
@@ -13,6 +13,7 @@
     <v-row class="pa-0 ma-0 col-12 align-center justify-center">
       <v-col cols="4">
         <v-card height="400">
+          <!-- TODO update thin brick image -->
           <v-card-title class="display-1">Coming Soon...</v-card-title>
         </v-card>
       </v-col>

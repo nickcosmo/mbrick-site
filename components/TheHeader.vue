@@ -29,17 +29,17 @@
         </template>
         <v-list color="#FAFAFA">
           <v-list-item-group>
-            <nuxt-link to="/products/versa_liner">
+            <nuxt-link to="/products/embedded_brick">
               <v-list-item>
                 <v-list-item-title class="black--text" nuxt>
-                  Versa Liner
+                  Embedded Brick
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>
-            <nuxt-link to="/products/mcast">
+            <nuxt-link to="/products/concrete_patterns">
               <v-list-item>
                 <v-list-item-title class="black--text" nuxt>
-                  MCAST
+                  Concrete Patterns
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>

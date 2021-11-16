@@ -3,7 +3,7 @@
     <MobileNav @close="showDrawer = false" v-if="isMobile" :open="showDrawer" />
     <v-main>
       <!-- TODO Add in scroll top button -->
-      <!-- <v-btn
+      <v-btn
         style="z-index: 500"
         fab
         x-large
@@ -14,8 +14,7 @@
         @click="toTop"
       >
         <v-icon>mdi-arrow-up</v-icon>
-      </v-btn> -->
-      <!-- <TopBar /> -->
+      </v-btn>
       <TheHeader :isMobile="isMobile" @openDrawer="triggerDrawer" />
       <v-container fluid>
         <Nuxt :isMobile="isMobile" />
@@ -26,7 +25,6 @@
 </template>
 
 <script>
-import TopBar from "@/components/TopBar.vue";
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import MobileNav from "@/components/MobileNav.vue";
@@ -100,7 +98,6 @@ export default {
     }
   },
   components: {
-    TopBar,
     TheHeader,
     TheFooter,
     MobileNav

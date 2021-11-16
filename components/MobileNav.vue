@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer temporary app absolute right v-model="status">
+  <v-navigation-drawer temporary app right v-model="status">
     <v-list nav>
       <v-list-item-group>
         <nuxt-link to="/">
@@ -11,14 +11,14 @@
           <template v-slot:activator>
             <v-list-item-title> Products </v-list-item-title>
           </template>
-          <nuxt-link to="/products/versa_liner">
+          <nuxt-link to="/products/embedded_brick">
             <v-list-item class="pl-10" nuxt link>
-              <v-list-item-title> Versa Liner </v-list-item-title>
+              <v-list-item-title> Embedded Brick </v-list-item-title>
             </v-list-item>
           </nuxt-link>
-          <nuxt-link to="/products/mcast">
+          <nuxt-link to="/products/concrete_patterns">
             <v-list-item class="pl-10" nuxt link>
-              <v-list-item-title> MCAST </v-list-item-title>
+              <v-list-item-title> Concrete Patterns </v-list-item-title>
             </v-list-item>
           </nuxt-link>
           <nuxt-link to="/products/thin_brick">
