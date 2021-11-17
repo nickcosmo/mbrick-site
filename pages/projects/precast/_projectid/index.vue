@@ -1,5 +1,31 @@
 <template>
   <v-row>
+    <v-overlay
+      z-index="500"
+      opacity="0.9"
+      v-if="showCarousel"
+    >
+      <v-row>
+        <v-btn @click="showCarousel = !showCarousel" fab fixed top right dark>
+          <v-icon dark>
+            mdi-close
+          </v-icon>
+        </v-btn>
+        <v-col class="col-12" height="100%">
+          <v-carousel>
+            <v-carousel-item v-for="image in images" :key="image.id">
+              <v-img
+                class="mx-auto"
+                width="100%"
+                max-height="700"
+                max-width="700"
+                :src="image.filename"
+              ></v-img>
+            </v-carousel-item>
+          </v-carousel>
+        </v-col>
+      </v-row>
+    </v-overlay>
     <v-col cols="12" class="ma-0 pa-0">
       <v-img
         max-height="300"
@@ -19,17 +45,7 @@
       </v-img>
       <v-row no-gutters class="align-center justify-center px-10 px-md-0">
         <v-col class="col-12 col-md-6">
-          <v-card class="pa-0">
-            <v-carousel cycle :height="imageHeight" :show-arrows="true" hide-delimiters>
-              <v-carousel-item v-for="image in images" :key="image.id">
-                <v-img
-                  class="mx-auto"
-                  width="100%"
-                  :height="imageHeight"
-                  :src="image.filename"
-                ></v-img>
-              </v-carousel-item>
-            </v-carousel>
+          <v-card class="pa-0" tile>
             <v-card-text class="pb-0">
               <v-list class="pa-0">
                 <v-list-item class="px-0 text-subtitle-1 text-md-h6">
@@ -49,6 +65,19 @@
           </v-card>
         </v-col>
       </v-row>
+      <v-row no-gutters class="align-center justify-center px-10 px-md-0">
+        <v-col class="col-12 col-md-6 d-flex flex-wrap">
+          <v-img
+            v-for="image in images"
+            :key="image.id"
+            height="352"
+            width="300"
+            :src="image.filename"
+            class="ma-md-3 ma-0"
+            @click="showCarousel = !showCarousel"
+          ></v-img>
+        </v-col>
+      </v-row>
     </v-col>
   </v-row>
 </template>
@@ -59,7 +88,8 @@ export default {
     if (context.store.state.projects.precast.length) {
       return {
         images: [],
-        imageHeight: null
+        imageHeight: null,
+        showCarousel: false
       };
     } else {
       context.redirect("/");
