@@ -38,8 +38,10 @@ export default {
     [
       "storyblok-nuxt",
       {
-        //TODO swap access tokens based on process.env.NODE_ENV == "production"
-        accessToken: process.env.STORYBLOCK_ACCESS_TOKEN,
+        accessToken:
+          process.env.NODE_ENV === "production"
+            ? process.env.STORYBLOCK_ACCESS_PUBLIC_TOKEN
+            : process.env.STORYBLOCK_ACCESS_PREVIEW_TOKEN,
         cacheProvider: "memory"
       }
     ]
