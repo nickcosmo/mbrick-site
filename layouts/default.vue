@@ -2,7 +2,6 @@
   <v-app dark v-scroll="topCheck">
     <MobileNav @close="showDrawer = false" v-if="isMobile" :open="showDrawer" />
     <v-main>
-      <!-- TODO Add in scroll top button -->
       <v-btn
         style="z-index: 500"
         fab
@@ -10,7 +9,7 @@
         fixed
         bottom
         right
-        v-if="belowTop && !isMobile"
+        v-if="belowTop"
         @click="toTop"
       >
         <v-icon>mdi-arrow-up</v-icon>
