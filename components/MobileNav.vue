@@ -1,7 +1,7 @@
 <template>
-  <v-navigation-drawer temporary app right v-model="status">
+  <v-navigation-drawer @click.stop="log" temporary app bottom v-model="status">
     <v-list nav>
-      <v-list-item-group>
+      <v-list-item-group v-model="group">
         <nuxt-link to="/">
           <v-list-item nuxt link>
             <v-list-item-title> Home </v-list-item-title>
@@ -68,16 +68,19 @@
 </template>
 
 <script>
-// TODO Listen for drawer close
 export default {
   props: ["open"],
   data() {
     return {
       status: false,
-      // group: null,
+      group: null,
     };
   },
   watch: {
+    group() {
+      this.status = false
+      this.$emit("close");
+    },
     open(newVal, oldVal) {
       if (newVal) {
         this.status = true;

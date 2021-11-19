@@ -12,7 +12,7 @@
     <v-app-bar-nav-icon
       color="black"
       v-if="isMobile"
-      @click="openDrawer"
+      @click.stop="openDrawer"
     ></v-app-bar-nav-icon>
     <v-toolbar-items v-if="!isMobile">
       <nuxt-link to="/">

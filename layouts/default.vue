@@ -1,6 +1,6 @@
 <template>
   <v-app dark v-scroll="topCheck">
-    <MobileNav @close="showDrawer = false" v-if="isMobile" :open="showDrawer" />
+    <MobileNav @close="showDrawer = !showDrawer" v-if="isMobile" :open="showDrawer" />
     <v-main>
       <v-btn
         style="z-index: 500"
@@ -14,7 +14,7 @@
       >
         <v-icon>mdi-arrow-up</v-icon>
       </v-btn>
-      <TheHeader :isMobile="isMobile" @openDrawer="triggerDrawer" />
+      <TheHeader :isMobile="isMobile" @openDrawer="showDrawer = !showDrawer" />
       <v-container fluid>
         <Nuxt :isMobile="isMobile" />
       </v-container>
@@ -69,11 +69,6 @@ export default {
       });
     },
     checkMobile() {
-      // if (["xs", "sm"].indexOf(this.$vuetify.breakpoint.name) > -1) {
-      //   this.isMobile = true;
-      // } else {
-      //   this.isMobile = false;
-      // }
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
         case "sm":
@@ -83,9 +78,6 @@ export default {
         default:
           this.isMobile = false;
       }
-    },
-    triggerDrawer() {
-      this.showDrawer = !this.showDrawer;
     },
     topCheck() {
       return window.pageYOffset > 0
