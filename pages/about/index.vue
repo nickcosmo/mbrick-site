@@ -10,7 +10,6 @@
               justify-center
               align-center
               text-center
-              display-4
               text-md-h1 text-h2
             "
             gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
