@@ -11,10 +11,14 @@
       </v-img>
     </v-col>
     <v-row class="pa-0 ma-0 col-12 align-center justify-center">
-      <v-col cols="4">
-        <v-card height="400">
-          <!-- TODO update thin brick image -->
-          <v-card-title class="display-1">Coming Soon...</v-card-title>
+      <v-col class="col-10 col-md-6">
+        <v-card tile>
+          <v-card-title class="text-md-h2 text-sm-h3 text-h4 justify-center">Endicott Colors</v-card-title>
+          <v-img :src="require('@/static/endicott_colors.jpg')"> </v-img>
+        </v-card>
+        <v-card class="mt-10" tile>
+          <v-card-title class="text-md-h2 text-sm-h3 text-h4 justify-center">Metro Colors</v-card-title>
+          <v-img :src="require('@/static/metro_colors.jpg')"> </v-img>
         </v-card>
       </v-col>
     </v-row>
