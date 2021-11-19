@@ -11,7 +11,7 @@
         LET'S TALK BRICK!
       </v-img>
       <v-row class="d-flex flex-column flex-md-row align-center justify-center">
-        <v-col class="col-md-5 col-12 px-6 px-md-0">
+        <v-col class="col-md-5 col-12 px-8 px-md-0">
           <v-card :height="cardHeight" tile class="mb-md-1">
             <v-card-title class="text-md-h4 text-h5 font-weight-bold">
               Innovative Brick, LLC Broomfield, CO
@@ -23,20 +23,20 @@
             <v-card-text>
               <v-list>
                 <v-list-item class="text-subtitle-1 text-md-h6">
-                  Call us now: 1-800-413-4588
+                  Call: 1-800-413-4588
                 </v-list-item>
                 <v-list-item class="text-subtitle-1 text-md-h6">
                   Email: contact@mbrick.com
                 </v-list-item>
                 <v-list-item class="text-subtitle-1 text-md-h6">
-                  Drop by: 11625 Reed Court, Broomfield, CO, 80020
+                  11625 Reed Court, Broomfield, CO, 80020
                 </v-list-item>
               </v-list>
             </v-card-text>
           </v-card>
         </v-col>
         <v-col
-          class="col-md-5 col-12 align-center text-center px-6 px-md-0 pt-0 pt-md-6"
+          class="col-md-5 col-12 align-center text-center px-8 px-md-0 pt-0 pt-md-6"
         >
           <a
             href="https://www.google.com/maps/place/Innovative+Brick+Systems/@39.9084192,-105.0751496,15z/data=!4m5!3m4!1s0x0:0x7054d0219d3e7d45!8m2!3d39.9083797!4d-105.0751196"

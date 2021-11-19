@@ -11,8 +11,8 @@
             mdi-close
           </v-icon>
         </v-btn>
-        <v-col class="col-12" height="100%">
-          <v-carousel>
+        <v-col class="mx-auto col-7 col-md-12">
+          <v-carousel height="imageHeight">
             <v-carousel-item v-for="image in images" :key="image.id">
               <v-img
                 class="mx-auto"
@@ -43,9 +43,8 @@
       >
         {{ project.title }}
       </v-img>
-      <v-row no-gutters class="align-center justify-center px-10 px-md-0">
-        <!-- TODO make this wider! -->
-        <v-col class="col-12 col-md-6">
+      <v-row no-gutters class="align-center justify-center px-5 px-md-0">
+        <v-col class="col-12 col-md-7">
           <v-card class="pa-0" tile>
             <v-card-text class="pb-0">
               <v-list class="pa-0">
@@ -66,15 +65,15 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row no-gutters class="align-center justify-center px-10 px-md-0">
-        <v-col class="col-12 col-md-6 d-flex flex-wrap">
+      <v-row no-gutters class="align-center justify-center px-5 px-md-0 mx-md-n5">
+        <v-col class="col-12 col-md-7 d-flex flex-wrap">
           <v-img
             v-for="image in images"
             :key="image.id"
             height="352"
             width="300"
             :src="image.filename"
-            class="ma-md-3 ma-0"
+            class="ma-md-3 my-3"
             @click="showCarousel = !showCarousel"
           ></v-img>
         </v-col>

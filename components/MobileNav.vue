@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer @click.stop="log" temporary app bottom v-model="status">
+  <v-navigation-drawer temporary app bottom v-model="status">
     <v-list nav>
       <v-list-item-group v-model="group">
         <nuxt-link to="/">
@@ -77,9 +77,11 @@ export default {
     };
   },
   watch: {
-    group() {
-      this.status = false
-      this.$emit("close");
+    group(newVal, oldVal) {
+      if (newVal !== 1 && newVal !== 2) {
+        this.status = false
+        this.$emit("close");
+      }
     },
     open(newVal, oldVal) {
       if (newVal) {

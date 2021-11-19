@@ -15,7 +15,7 @@
         <iframe
           v-for="model in models"
           :key="model.url"
-          class="ma-md-5 my-5"
+          class="ma-sm-5 my-5"
           :src="model.url"
           :height="imageHeight"
           :width="imageWidth"

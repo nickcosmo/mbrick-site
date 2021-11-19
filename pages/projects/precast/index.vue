@@ -1,7 +1,6 @@
 <template>
   <v-row>
     <v-col cols="12 ma-0 pa-0">
-      <!-- TODO adjust height based on mobile! -->
       <v-img
         max-height="300"
         class="d-flex justify-center align-center text-center text-sm-h1 text-h2"
@@ -12,7 +11,7 @@
       </v-img>
     </v-col>
     <v-row class="ma-0">
-      <v-col class="col-12 col-sm-6 mx-auto px-0">
+      <v-col class="col-12 col-md-6 mx-auto px-md-0 px-5">
         <v-divider></v-divider>
         <p class="text-md-h6 text-subtitle-1 my-5 text-justify">
           Our precast technology is state of the art. Just ask Roy Donk, he was

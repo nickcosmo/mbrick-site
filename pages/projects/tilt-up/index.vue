@@ -1,7 +1,6 @@
 <template>
   <v-row>
     <v-col cols="12 ma-0 pa-0">
-      <!-- TODO adjust height based on mobile! -->
       <v-img
         max-height="300"
         class="d-flex justify-center align-center text-center text-md-h1 text-h2"
