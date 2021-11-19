@@ -71,6 +71,7 @@
             :src="image.filename"
             class="ma-md-3 my-3"
             @click="showCarousel = !showCarousel"
+            style="cursor: pointer;"
           ></v-img>
         </v-col>
       </v-row>
