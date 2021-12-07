@@ -10,7 +10,7 @@
       >
         LET'S TALK BRICK!
       </v-img>
-      <v-row class="d-flex flex-column flex-md-row align-center justify-center">
+      <v-row class="d-flex flex-column align-center justify-center">
         <v-col class="col-md-5 col-12 px-8 px-md-0">
           <v-card :height="cardHeight" tile class="mb-md-1">
             <v-card-title class="text-md-h4 text-h5 font-weight-bold">

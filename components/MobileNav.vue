@@ -78,7 +78,7 @@ export default {
   },
   watch: {
     group(newVal, oldVal) {
-      if (newVal !== 1 && newVal !== 2) {
+      if (newVal && newVal !== 1 && newVal !== 2) {
         this.status = false
         this.$emit("close");
       }
