@@ -10,7 +10,7 @@
         TILT-UP
       </v-img>
     </v-col>
-    <v-row class="ma-0">
+    <!-- <v-row class="ma-0">
       <v-col class="col-12 col-md-6 mx-auto px-md-0 px-5">
         <v-divider></v-divider>
         <p class="text-md-h6 text-subtitle-1 my-5 text-justify">
@@ -20,7 +20,7 @@
         </p>
         <v-divider></v-divider>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row class="ma-0">
       <v-col cols="12" class="ma-0 pa-0 d-flex flex-wrap justify-center">
         <nuxt-link

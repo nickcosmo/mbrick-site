@@ -39,7 +39,7 @@
       >
         {{ project.title }}
       </v-img>
-      <v-row no-gutters class="align-center justify-center px-5 px-md-0">
+      <v-row v-if="project.description" no-gutters class="align-center justify-center px-5 px-md-0">
         <v-col class="col-12 col-md-7">
           <v-card class="pa-0" tile>
             <v-card-text class="pb-0">
