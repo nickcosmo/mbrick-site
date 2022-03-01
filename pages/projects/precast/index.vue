@@ -32,7 +32,7 @@
           <v-img
             class="ma-5 image-hover align-center text-center"
             :src="project.images[0].filename"
-            :height="getThumbnailImageHeight"
+            :height="setImageHeight"
             :width="getThumbnailImageWidth"
             max-height="400"
             max-width="500"
@@ -90,6 +90,27 @@ export default {
       .catch(err => {
         console.error(err);
       });
+  },
+    methods: {
+    setImageHeight() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          this.imageHeight = 300;
+          break;
+        case "sm":
+          this.imageHeight = 300;
+          break;
+        case "md":
+          this.imageHeight = 400;
+          break;
+        case "lg":
+          this.imageHeight = 500;
+          break;
+        case "xl":
+          this.imageHeight = 600;
+          break;
+      }
+    }
   },
   computed: {
     ...mapGetters({
