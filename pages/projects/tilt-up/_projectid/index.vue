@@ -16,6 +16,7 @@
                 max-height="700"
                 max-width="700"
                 :src="image.filename"
+                :alt="image.alt"
               ></v-img>
             </v-carousel-item>
           </v-carousel>
@@ -69,6 +70,7 @@
             height="352"
             width="300"
             :src="image.filename"
+            :alt="image.alt"
             class="ma-md-3 my-3"
             @click="showCarousel = !showCarousel"
             style="cursor: pointer;"

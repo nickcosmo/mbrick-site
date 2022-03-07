@@ -45,6 +45,7 @@
               :src="require('@/static/map-pic.jpg')"
               max-height="700"
               width="100%"
+              alt="MBRICK - Innovative Brick Systems location in Broomfield Colorado"
             >
             </v-img>
           </a>

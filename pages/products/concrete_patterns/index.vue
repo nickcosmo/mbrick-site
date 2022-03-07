@@ -22,6 +22,7 @@
           data-fbo-height="auto"
           data-fbo-version="1"
           style="max-width: 100%"
+          alt="MBRICK tumbled brick brochure"
           >TUMBLED BRICK BROCHURE</a
         >
         <script

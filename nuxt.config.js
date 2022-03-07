@@ -5,14 +5,19 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: "%s - MBRICK",
-    title: "MBRICK",
+    title: "Innovative Brick Systems LLC",
     htmlAttrs: {
       lang: "en"
     },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Innovate Brick Systems LLC - expert manufacturer of embedded thin brick systems for the precast concrete and tilt-wall industry"
+      },
       { name: "format-detection", content: "telephone=no" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/mbrick-favi.ico" }]

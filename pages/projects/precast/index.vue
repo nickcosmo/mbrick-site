@@ -32,8 +32,8 @@
           <v-img
             class="ma-5 image-hover align-center text-center"
             :src="project.images[0].filename"
-            :height="setImageHeight"
-            :width="getThumbnailImageWidth"
+            :height="imageHeight"
+            :width="imageWidth"
             max-height="400"
             max-width="500"
           >
@@ -59,11 +59,14 @@
 import { mapGetters } from "vuex";
 
 export default {
-  asyncData(context) {
+  async asyncData(context) {
     if (context.store.state.projects.precast.length) {
-      return null;
+      return {
+        imageHeight: null,
+        imageWidth: null
+      };
     }
-    return context.app.$storyapi
+    const projectData = await context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
         starts_with: "precast-projects/"
@@ -90,34 +93,53 @@ export default {
       .catch(err => {
         console.error(err);
       });
-  },
+
+      return {
+        ...projectData,
+        imageHeight: null,
+        imageWidth: null
+      }
+    },
     methods: {
-    setImageHeight() {
-      switch (this.$vuetify.breakpoint.name) {
+      setImageHeight() {
+        switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          this.imageHeight = 300;
+          this.imageHeight = 200;
+          this.imageWidth = 300;
           break;
         case "sm":
-          this.imageHeight = 300;
+          this.imageHeight = 200;
+          this.imageWidth = 300;
           break;
         case "md":
-          this.imageHeight = 400;
+          this.imageHeight = 300;
+          this.imageWidth = "100%";
           break;
         case "lg":
-          this.imageHeight = 500;
+          this.imageHeight = 350;
+          this.imageWidth = "100%";
           break;
         case "xl":
-          this.imageHeight = 600;
+          this.imageHeight = 350;
+          this.imageWidth = "100%";
           break;
+        }
       }
-    }
   },
   computed: {
     ...mapGetters({
       getPrecastProjects: "getPrecastProjects",
-      getThumbnailImageHeight: "images/getThumbnailImageHeight",
-      getThumbnailImageWidth: "images/getThumbnailImageWidth"
+      // getThumbnailImageHeight: "images/getThumbnailImageHeight",
+      // getThumbnailImageWidth: "images/getThumbnailImageWidth"
     })
+  },
+  mounted() {
+    window.onNuxtReady(() => {
+      this.setImageHeight();
+    });
+  },
+  created() {
+    this.setImageHeight();
   }
 };
 </script>

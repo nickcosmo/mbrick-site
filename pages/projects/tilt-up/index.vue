@@ -32,8 +32,8 @@
           <v-img
             class="image-hover align-center text-center ma-5"
             :src="project.images[0].filename"
-            :height="getThumbnailImageHeight"
-            :width="getThumbnailImageWidth"
+            :height="imageHeight"
+            :width="imageWidth"
             max-height="400"
             max-width="500"
           >
@@ -61,9 +61,12 @@ import { mapGetters } from "vuex";
 export default {
   async asyncData(context) {
     if (context.store.state.projects.tiltup.length) {
-      return null;
+      return {
+        imageHeight: null,
+        imageWidth: null
+      };
     }
-    return await context.app.$storyapi
+    const projectData = await context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
         starts_with: "tiltupprojects/"
@@ -90,13 +93,52 @@ export default {
       .catch(err => {
         console.error(err);
       });
+      return {
+        ...projectData,
+        imageHeight: null,
+        imageWidth: null
+      }
+  },
+  methods: {
+    setImageHeight() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          this.imageHeight = 200;
+          this.imageWidth = 300;
+          break;
+        case "sm":
+          this.imageHeight = 200;
+          this.imageWidth = 300;
+          break;
+        case "md":
+          this.imageHeight = 300;
+          this.imageWidth = "100%";
+          break;
+        case "lg":
+          this.imageHeight = 350;
+          this.imageWidth = "100%";
+          break;
+        case "xl":
+          this.imageHeight = 350;
+          this.imageWidth = "100%";
+          break;
+      }
+    }
   },
   computed: {
     ...mapGetters({
       getTiltUpProjects: "getTiltUpProjects",
-      getThumbnailImageHeight: "images/getThumbnailImageHeight",
-      getThumbnailImageWidth: "images/getThumbnailImageWidth"
+      // getThumbnailImageHeight: "images/getThumbnailImageHeight",
+      // getThumbnailImageWidth: "images/getThumbnailImageWidth"
     })
+  },
+  mounted() {
+    window.onNuxtReady(() => {
+      this.setImageHeight();
+    });
+  },
+  created() {
+    this.setImageHeight();
   }
 };
 </script>

@@ -14,11 +14,17 @@
       <v-col class="col-10 col-md-6">
         <v-card tile>
           <v-card-title class="text-md-h2 text-sm-h3 text-h4 justify-center">Endicott Colors</v-card-title>
-          <v-img :src="require('@/static/endicott_colors.jpg')"> </v-img>
+          <v-img 
+            :src="require('@/static/endicott_colors.jpg')"
+            alt="Brick samples of endicott color options"
+          ></v-img>
         </v-card>
         <v-card class="mt-10" tile>
           <v-card-title class="text-md-h2 text-sm-h3 text-h4 justify-center">Metro Colors</v-card-title>
-          <v-img :src="require('@/static/metro_colors.jpg')"> </v-img>
+          <v-img 
+            :src="require('@/static/metro_colors.jpg')"
+            alt="Brick samples of metro color options"
+          ></v-img>
         </v-card>
       </v-col>
     </v-row>

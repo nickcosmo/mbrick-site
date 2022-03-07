@@ -4,7 +4,7 @@
       <v-img
         contain
         height="100%"
-        max-width="180"
+        max-width="160"
         :src="require('@/static/ibs-black.png')"
       ></v-img>
     </nuxt-link>
