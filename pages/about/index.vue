@@ -50,13 +50,13 @@
             <v-col class="col-12 col-md-5">
               <!-- TODO Update images from mbrick archive -->
               <!-- prettier-ignore -->
-              <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" src="https://images.unsplash.com/photo-1614350646685-157ee8e4a25e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJyaWNrJTIwYnVpbGRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></v-img>
+              <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" :src="require('@/static/main-garage.jpg')"></v-img>
             </v-col>
           </v-row>
           <v-row class="ma-md-12 ma-3 flex-column flex-md-row">
             <v-col class="col-12 col-md-5">
               <!-- prettier-ignore -->
-              <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" src="https://images.unsplash.com/photo-1568539314706-f17c0e60d96d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGJyaWNrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></v-img>
+              <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" :src="require('@/static/main-brick.jpg')"></v-img>
             </v-col>
             <v-col class="col-12 col-md-7">
               <v-card
