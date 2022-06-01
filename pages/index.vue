@@ -7,7 +7,7 @@
         class="d-flex align-center mb-10"
         eager
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
-        :src="require('@/static/brick-2.jpg')"
+        :src="require('../static/brick-2.jpg')"
       >
         <h2 class="text-md-h3 text-sm-h4 text-h5 mt-5">INDUSTRY LEADER IN</h2>
         <h1 class="text-md-h1 text-h2 mt-5">CUSTOM THIN-BRICK DESIGN</h1>
@@ -55,13 +55,13 @@
         <v-col class="col-12 col-md-5">
           <!-- TODO Update images from Mbrick archive -->
           <!-- prettier-ignore -->
-          <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" :src="require('@/static/main-garage.jpg')"></v-img>
+          <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" :src="require('../static/main-garage.jpg')"></v-img>
         </v-col>
       </v-row>
       <v-row class="ma-md-12 ma-3 flex-column flex-md-row">
         <v-col class="col-12 col-md-5">
           <!-- prettier-ignore -->
-          <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" :src="require('@/static/main-brick.jpg')"></v-img>
+          <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" :src="require('../static/main-brick.jpg')"></v-img>
         </v-col>
         <v-col class="col-12 col-md-7">
           <v-card

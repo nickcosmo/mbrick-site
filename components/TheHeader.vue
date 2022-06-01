@@ -5,7 +5,7 @@
         contain
         height="100%"
         max-width="160"
-        :src="require('@/static/ibs-black.png')"
+        :src="require('../static/ibs-black.png')"
       ></v-img>
     </nuxt-link>
     <v-spacer></v-spacer>
