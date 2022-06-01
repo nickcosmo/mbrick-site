@@ -83,6 +83,7 @@ export default {
         this.$emit("close");
       }
     },
+    // test
     open(newVal, oldVal) {
       if (newVal) {
         this.status = true;
