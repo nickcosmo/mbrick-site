@@ -11,10 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci
-      - run: npm install -g nuxt
-      - run: nuxt generate
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Install Deps
+        run: npm ci
+      - name: Install Nuxt
+        run: npm install -g nuxt
+      - name: generate
+        run: nuxt generate
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MBRICK_SITE }}'
