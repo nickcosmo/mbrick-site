@@ -39,7 +39,7 @@
             <nuxt-link to="/products/concrete_patterns">
               <v-list-item>
                 <v-list-item-title class="black--text" nuxt>
-                  Concrete Patterns
+                  Faux Brick and Stone
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>

@@ -7,29 +7,23 @@
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
         :src="require('@/static/brick-2.jpg')"
       >
-        CONCRETE PATTERNS
+        FAUX BRICK AND STONE
       </v-img>
     </v-col>
     <v-row class="pa-0 ma-0 col-12 align-center justify-center">
       <v-col class="col-md-6 col-12">
-        <a
-          href="https://catalogs.mbrick.com/view/925856242/"
+        <a 
+          href=https://catalogs.mbrick.com/view/672042111/
           class="fbo-embed"
-          data-fbo-id="925856242"
-          data-fbo-ratio="16:9"
+          data-fbo-id="672042111"
+          data-fbo-ratio="3:2"
           data-fbo-lightbox="yes"
           data-fbo-width="100%"
           data-fbo-height="auto"
           data-fbo-version="1"
           style="max-width: 100%"
-          alt="MBRICK tumbled brick brochure"
-          >TUMBLED BRICK BROCHURE</a
-        >
-        <script
-          async
-          defer
-          src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=925856242"
-        ></script>
+          >MCAST BROCHURE</a>
+          <script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=672042111"></script>
       </v-col>
     </v-row>
   </v-row>
