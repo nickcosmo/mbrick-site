@@ -11,21 +11,24 @@
       </v-img>
     </v-col>
     <v-row class="pa-0 ma-0 col-12 align-center justify-center">
-      <v-col class="col-10 col-md-6">
-        <v-card tile>
-          <v-card-title class="text-md-h2 text-sm-h3 text-h4 justify-center">Endicott Colors</v-card-title>
-          <v-img 
-            :src="require('@/static/endicott_colors.jpg')"
+      <v-col class="col-10 d-flex flex-wrap justify-center">
+        <!-- <v-card 
+
+          class="pa-0 ma-0"
+        > -->
+          <v-img
+            v-for="product in products"
+            :key="product.imageUrl"
+            :src="product.imageUrl"
+            :height="imageHeight"
+            max-height="400"
+            width="200"
+            contain
             alt="Brick samples of endicott color options"
+            class="ma-3"
           ></v-img>
-        </v-card>
-        <v-card class="mt-10" tile>
-          <v-card-title class="text-md-h2 text-sm-h3 text-h4 justify-center">Metro Colors</v-card-title>
-          <v-img 
-            :src="require('@/static/metro_colors.jpg')"
-            alt="Brick samples of metro color options"
-          ></v-img>
-        </v-card>
+          <!-- <v-card-title class="text-h3 justify-center">{{product.title}}</v-card-title> -->
+        <!-- </v-card> -->
       </v-col>
     </v-row>
   </v-row>
@@ -34,30 +37,63 @@
 <script>
 export default {
   // TODO Add products to storyblok
-  // asyncData(context) {
-  //   return context.app.$storyapi
-  //     .get("cdn/stories", {
-  //       version: context.isDev ? "draft" : "published",
-  //       starts_with: "tiltupprojects/",
-  //     })
-  //     .then((res) => {
-  //       return {
-  //         projects: res.data.stories.map((item) => {
-  //           return {
-  //             id: item.content._uid,
-  //             title: item.content.title,
-  //             description: item.content.description,
-  //             location: item.content.location,
-  //             precaster: item.content.precaster,
-  //             imageUrl: item.content.image.filename,
-  //             date: item.content.date,
-  //           };
-  //         }),
-  //       };
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // },
+  data() {
+    return {
+      imageHeight: null,
+      imageWidth: null,
+      products: [
+        {
+          title: "Thin Brick 1",
+          imageUrl: require('@/static/endicott-manganese-ironspot-smooth.jpg'),
+        },
+        {
+          title: "Thin Brick 2",
+          imageUrl: require('@/static/endicott-red-ironspot-smooth.jpg'),
+        },
+        {
+          title: "Thin Brick 3",
+          imageUrl: require('@/static/endicott-rose-blend-velour.jpg'),
+        },
+        {
+          title: "Thin Brick 4",
+          imageUrl: require('@/static/endicott-sienna-ironspot-smooth.jpg'),
+        },
+      ]
+    }
+  },
+    methods: {
+    setImageHeight() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          this.imageWidth = 300;
+          this.imageHeight = 180;
+          break;
+        case "sm":
+          this.imageWidth = 300;
+          this.imageHeight = 180;
+          break;
+        case "md":
+          this.imageWidth = 500;
+          this.imageHeight = 240;
+          break;
+        case "lg":
+          this.imageWidth = 500;
+          this.imageHeight = 240;
+          break;
+        case "xl":
+          this.imageWidth = 500;
+          this.imageHeight = 300;
+          break;
+      }
+    },
+  },
+  mounted() {
+    window.onNuxtReady(() => {
+      this.setImageHeight();
+    });
+  },
+  created() {
+    this.setImageHeight();
+  },
 };
 </script>
