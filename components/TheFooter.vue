@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless class="mt-6" no-gutters>
+  <v-footer app absolute padless class="mt-6" no-gutters>
     <v-row justify="center" no-gutters>
       <v-col
         class="py-4 d-flex flex-md-row flex-column justify-space-around"

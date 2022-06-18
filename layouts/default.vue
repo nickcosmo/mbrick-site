@@ -18,8 +18,8 @@
       <v-container fluid>
         <Nuxt :isMobile="isMobile" />
       </v-container>
-      <TheFooter :isMobile="isMobile" />
     </v-main>
+    <TheFooter :isMobile="isMobile" />
   </v-app>
 </template>
 
