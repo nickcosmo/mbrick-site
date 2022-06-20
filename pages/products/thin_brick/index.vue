@@ -11,53 +11,73 @@
       </v-img>
     </v-col>
     <v-row class="pa-0 ma-0 col-12 align-center justify-center">
-      <v-col class="col-10 col-md-6">
-        <v-card tile>
-          <v-card-title class="text-md-h2 text-sm-h3 text-h4 justify-center">Endicott Colors</v-card-title>
-          <v-img 
-            :src="require('@/static/endicott_colors.jpg')"
-            alt="Brick samples of endicott color options"
-          ></v-img>
-        </v-card>
-        <v-card class="mt-10" tile>
-          <v-card-title class="text-md-h2 text-sm-h3 text-h4 justify-center">Metro Colors</v-card-title>
-          <v-img 
-            :src="require('@/static/metro_colors.jpg')"
-            alt="Brick samples of metro color options"
-          ></v-img>
-        </v-card>
+      <v-col class="col-10 d-flex flex-wrap justify-center">
+        <!-- <v-card 
+          class="pa-0 ma-0"
+          width="200"
+        > -->
+        <div v-for="product in paginatedProds" :key="product.id" class="my-3 mx-10 text-wrap">
+          <v-img
+            :src="product.filename"
+            width="300"
+            contain
+            :alt="product.alt"
+          >
+          </v-img>
+          <v-card tile outlined class= "ma-0" width="100%" style="background-color: #121212;">
+            <v-card-title class="text-h6 text-wrap justify-center" style="overflow-wrap: break-word;">{{product.title}}</v-card-title>
+            <!-- <v-card-text>Get more details here...</v-card-text> -->
+          </v-card>
+        </div>
+        <!-- </v-card> -->
+      </v-col>
+    </v-row>
+    <v-row v-if="getThinBrickProducts.length > 20" class="ma-0 pa-0">
+      <v-col cols="12">
+        <v-pagination
+          v-model="page"
+          :length="Math.floor(getThinBrickProducts.length/20)"
+        ></v-pagination>
       </v-col>
     </v-row>
   </v-row>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  // TODO Add products to storyblok
-  // asyncData(context) {
-  //   return context.app.$storyapi
-  //     .get("cdn/stories", {
-  //       version: context.isDev ? "draft" : "published",
-  //       starts_with: "tiltupprojects/",
-  //     })
-  //     .then((res) => {
-  //       return {
-  //         projects: res.data.stories.map((item) => {
-  //           return {
-  //             id: item.content._uid,
-  //             title: item.content.title,
-  //             description: item.content.description,
-  //             location: item.content.location,
-  //             precaster: item.content.precaster,
-  //             imageUrl: item.content.image.filename,
-  //             date: item.content.date,
-  //           };
-  //         }),
-  //       };
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // },
+  async asyncData(context) {
+  const products = await context.app.$storyapi
+    .get("cdn/stories", {
+      version: context.isDev ? "draft" : "published",
+      starts_with: "products/"
+    })
+    .then(res => {
+      context.store.dispatch(
+        "fetchThinBrickProducts",
+        res.data.stories[0].content.images.map(item => {
+          return item;
+        })
+      );
+    })
+    .catch(err => {
+      console.error(err);
+    });
+
+    return {
+      ...products,
+      page: 0,
+    }
+  },
+  computed: {
+    ...mapGetters({
+      getThinBrickProducts: "getThinBrickProducts",
+      getThinBrickProductsPaginated: "getThinBrickProductsPaginated",
+    }),
+    paginatedProds() {
+      return this.getThinBrickProductsPaginated(this.page);
+    },
+  }
 };
 </script>
