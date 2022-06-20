@@ -13,87 +13,71 @@
     <v-row class="pa-0 ma-0 col-12 align-center justify-center">
       <v-col class="col-10 d-flex flex-wrap justify-center">
         <!-- <v-card 
-
           class="pa-0 ma-0"
+          width="200"
         > -->
+        <div v-for="product in paginatedProds" :key="product.id" class="my-3 mx-10 text-wrap">
           <v-img
-            v-for="product in products"
-            :key="product.imageUrl"
-            :src="product.imageUrl"
-            :height="imageHeight"
-            max-height="400"
-            width="200"
+            :src="product.filename"
+            width="300"
             contain
-            alt="Brick samples of endicott color options"
-            class="ma-3"
-          ></v-img>
-          <!-- <v-card-title class="text-h3 justify-center">{{product.title}}</v-card-title> -->
+            :alt="product.alt"
+          >
+          </v-img>
+          <v-card tile outlined class= "ma-0" width="100%" style="background-color: #121212;">
+            <v-card-title class="text-h6 text-wrap justify-center" style="overflow-wrap: break-word;">{{product.title}}</v-card-title>
+            <!-- <v-card-text>Get more details here...</v-card-text> -->
+          </v-card>
+        </div>
         <!-- </v-card> -->
+      </v-col>
+    </v-row>
+    <v-row v-if="getThinBrickProducts.length > 20" class="ma-0 pa-0">
+      <v-col cols="12">
+        <v-pagination
+          v-model="page"
+          :length="Math.floor(getThinBrickProducts.length/20)"
+        ></v-pagination>
       </v-col>
     </v-row>
   </v-row>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  // TODO Add products to storyblok
-  data() {
+  async asyncData(context) {
+  const products = await context.app.$storyapi
+    .get("cdn/stories", {
+      version: context.isDev ? "draft" : "published",
+      starts_with: "products/"
+    })
+    .then(res => {
+      context.store.dispatch(
+        "fetchThinBrickProducts",
+        res.data.stories[0].content.images.map(item => {
+          return item;
+        })
+      );
+    })
+    .catch(err => {
+      console.error(err);
+    });
+
     return {
-      imageHeight: null,
-      imageWidth: null,
-      products: [
-        {
-          title: "Thin Brick 1",
-          imageUrl: require('@/static/endicott-manganese-ironspot-smooth.jpg'),
-        },
-        {
-          title: "Thin Brick 2",
-          imageUrl: require('@/static/endicott-red-ironspot-smooth.jpg'),
-        },
-        {
-          title: "Thin Brick 3",
-          imageUrl: require('@/static/endicott-rose-blend-velour.jpg'),
-        },
-        {
-          title: "Thin Brick 4",
-          imageUrl: require('@/static/endicott-sienna-ironspot-smooth.jpg'),
-        },
-      ]
+      ...products,
+      page: 0,
     }
   },
-    methods: {
-    setImageHeight() {
-      switch (this.$vuetify.breakpoint.name) {
-        case "xs":
-          this.imageWidth = 300;
-          this.imageHeight = 180;
-          break;
-        case "sm":
-          this.imageWidth = 300;
-          this.imageHeight = 180;
-          break;
-        case "md":
-          this.imageWidth = 500;
-          this.imageHeight = 240;
-          break;
-        case "lg":
-          this.imageWidth = 500;
-          this.imageHeight = 240;
-          break;
-        case "xl":
-          this.imageWidth = 500;
-          this.imageHeight = 300;
-          break;
-      }
+  computed: {
+    ...mapGetters({
+      getThinBrickProducts: "getThinBrickProducts",
+      getThinBrickProductsPaginated: "getThinBrickProductsPaginated",
+    }),
+    paginatedProds() {
+      return this.getThinBrickProductsPaginated(this.page);
     },
-  },
-  mounted() {
-    window.onNuxtReady(() => {
-      this.setImageHeight();
-    });
-  },
-  created() {
-    this.setImageHeight();
-  },
+  }
 };
 </script>

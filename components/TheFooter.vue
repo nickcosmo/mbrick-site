@@ -1,4 +1,5 @@
 <template>
+<!-- TODO remove this margin on footer -->
   <v-footer app absolute padless class="mt-6" no-gutters>
     <v-row justify="center" no-gutters>
       <v-col
