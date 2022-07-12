@@ -7,7 +7,7 @@
         class="d-flex align-center mb-10"
         eager
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
-        :src="require('../static/brick-2.jpg')"
+        :src="require('../static/brick-hero-alt.jpg')"
       >
         <h2 class="text-md-h3 text-sm-h4 text-h5 mt-5">INDUSTRY LEADER IN</h2>
         <h1 class="text-md-h1 text-h2 mt-5">CUSTOM THIN-BRICK DESIGN</h1>

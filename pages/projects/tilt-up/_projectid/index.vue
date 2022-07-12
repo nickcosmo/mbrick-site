@@ -36,7 +36,7 @@
           text-uppercase
         "
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
-        :src="require('@/static/brick-2.jpg')"
+        :src="require('@/static/brick-hero-alt.jpg')"
       >
         {{ project.title }}
       </v-img>

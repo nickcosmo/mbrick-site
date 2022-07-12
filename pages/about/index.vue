@@ -13,7 +13,7 @@
               text-md-h1 text-h2
             "
             gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
-            :src="require('@/static/brick-2.jpg')"
+            :src="require('@/static/brick-hero-alt.jpg')"
           >
             THE MBRICK STORY
           </v-img>
