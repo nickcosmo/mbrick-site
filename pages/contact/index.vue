@@ -40,7 +40,7 @@
             href="https://www.google.com/maps/place/Innovative+Brick+Systems/@39.9084192,-105.0751496,15z/data=!4m5!3m4!1s0x0:0x7054d0219d3e7d45!8m2!3d39.9083797!4d-105.0751196"
           >
             <v-img
-              :src="require('@/static/map-pic.jpg')"
+              :src="require('@/static/map.jpg')"
               max-height="700"
               width="100%"
               alt="MBRICK - Innovative Brick Systems location in Broomfield Colorado"
