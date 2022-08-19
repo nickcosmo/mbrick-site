@@ -57,9 +57,9 @@
                 <v-list-item class="px-0 text-subtitle-1 text-md-h6">
                   Precaster: {{ project.precaster }}
                 </v-list-item>
-                <v-list-item class="px-0 text-subtitle-1 text-md-h6">
+                <!-- <v-list-item class="px-0 text-subtitle-1 text-md-h6">
                   Completion Date: {{ project.date }}
-                </v-list-item>
+                </v-list-item> -->
               </v-list>
             </v-card-text>
           </v-card>

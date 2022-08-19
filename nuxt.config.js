@@ -80,16 +80,5 @@ export default {
         ["@babel/plugin-proposal-private-property-in-object", { loose: true }]
       ]
     }
-    // loaders: {
-    //   vue: {
-    //     transformAssetUrls: {
-    //       video: "src",
-    //       source: "src",
-    //       object: "src",
-    //       embed: "src",
-    //       img: "src"
-    //     }
-    //   }
-    // }
   }
 };

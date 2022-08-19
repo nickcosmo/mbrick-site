@@ -98,9 +98,9 @@
           <v-card
             class="elevation-0 transparent d-flex flex-column align-center"
           >
-            <v-card-title class="text-md-h2 text-md-h3 text-h4"
-              >INNOVATIVE SOLUTIONS FOR ARCHITECTS</v-card-title
-            >
+            <v-card-title class="text-md-h2 text-md-h3 text-h4">
+              INNOVATIVE SOLUTIONS FOR ARCHITECTS
+            </v-card-title>
             <v-card-text class="text-md-h5 text-sm-h6 text-body-1 mt-md-5">
               Include IBS in your Master Specs.
               <strong class="white--text">Click here</strong> to download

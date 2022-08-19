@@ -36,7 +36,7 @@
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>
-            <nuxt-link to="/products/concrete_patterns">
+            <nuxt-link to="/products/faux_brick_and_stone">
               <v-list-item>
                 <v-list-item-title class="black--text" nuxt>
                   Faux Brick and Stone
