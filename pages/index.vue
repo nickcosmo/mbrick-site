@@ -1,5 +1,6 @@
 <template>
   <v-row justify="center" align="center">
+    <!-- <v-col></v-col> -->
     <v-col cols="12" class="text-center ma-0 pa-0">
       <v-img
         max-height="700"
