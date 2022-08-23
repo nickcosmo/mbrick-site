@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 16
       - name: Install Deps
-        run: npm ci
+        run: npm install
       - name: Generate  
         run: NODE_ENV=production STORYBLOCK_ACCESS_PUBLIC_TOKEN=${{ secrets.STORYBLOCK_ACCESS_PUBLIC_TOKEN }} npm run generate
       - name: Deploy
