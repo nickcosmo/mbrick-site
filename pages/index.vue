@@ -53,15 +53,24 @@
           </v-card>
         </v-col>
         <v-col class="col-12 col-md-5">
-          <!-- TODO Update images from Mbrick archive -->
-          <!-- prettier-ignore -->
-          <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" :src="require('../static/main-garage.jpg')"></v-img>
+          <v-img
+            class="mx-auto"
+            :height="imageHeight"
+            max-height="700"
+            max-width="700"
+            :src="require('../static/main-garage.jpg')"
+          ></v-img>
         </v-col>
       </v-row>
       <v-row class="ma-md-12 ma-3 flex-column flex-md-row">
         <v-col class="col-12 col-md-5">
-          <!-- prettier-ignore -->
-          <v-img class="mx-auto" :height="imageHeight" max-height="700" max-width="700" :src="require('../static/main-brick.jpg')"></v-img>
+          <v-img
+            class="mx-auto"
+            :height="imageHeight"
+            max-height="700"
+            max-width="700"
+            :src="require('../static/main-brick.jpg')"
+          ></v-img>
         </v-col>
         <v-col class="col-12 col-md-7">
           <v-card
