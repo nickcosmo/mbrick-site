@@ -14,7 +14,7 @@
         <v-col class="col-md-5 col-12 px-8 px-md-0 ma-0 py-0">
           <v-card tile outlined style="background-color: #121212;">
             <v-card-title class="text-md-h4 text-h5 font-weight-bold">
-              Innovative Brick, LLC Broomfield, CO
+              Innovative Brick, LLC
             </v-card-title>
             <v-card-subtitle class="text-subtitle-1 text-md-h6">
               Please contact us for technical asistance or questions about your
@@ -29,7 +29,7 @@
                   Email: contact@mbrick.com
                 </v-list-item>
                 <v-list-item class="text-subtitle-1 text-md-h6">
-                  11625 Reed Court, Broomfield, CO, 80020
+                  Visit: 1756 Panorama Point, Lafayette CO, 80026
                 </v-list-item>
               </v-list>
             </v-card-text>
