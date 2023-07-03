@@ -11,23 +11,23 @@
       </v-img>
     </v-col>
     <!-- <v-row class="ma-0"> -->
-      <!-- <v-col class="col-12 col-md-6 mx-auto px-md-0 px-5"> -->
-        <!-- <v-divider></v-divider> -->
-        <!-- <p class="text-md-h6 text-subtitle-1 my-5 text-justify">
+    <!-- <v-col class="col-12 col-md-6 mx-auto px-md-0 px-5"> -->
+    <!-- <v-divider></v-divider> -->
+    <!-- <p class="text-md-h6 text-subtitle-1 my-5 text-justify">
           Our precast technology is state of the art. Just ask Roy Donk, he was
           a regular on the colgate comedy hour and used to play jazz flute with
           a kink.
         </p> -->
-        <!-- <v-divider></v-divider> -->
-      <!-- </v-col> -->
+    <!-- <v-divider></v-divider> -->
+    <!-- </v-col> -->
     <!-- </v-row> -->
     <v-row class="ma-0">
       <v-col cols="12" class="ma-0 pa-0 d-flex flex-wrap justify-center">
         <nuxt-link
-          style="padding: 0; margin: 0;"
+          style="padding: 0; margin: 0"
           v-for="project in getPrecastProjects"
           :key="project.id"
-          :to="'/projects/precast/' + project.id"
+          :to="'/projects/precast/' + project.slug"
         >
           <v-img
             class="ma-5 image-hover align-center text-center"
@@ -63,18 +63,18 @@ export default {
     if (context.store.state.projects.precast.length) {
       return {
         imageHeight: null,
-        imageWidth: null
+        imageWidth: null,
       };
     }
     const projectData = await context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
-        starts_with: "precast-projects/"
+        starts_with: "precast-projects/",
       })
-      .then(res => {
+      .then((res) => {
         context.store.dispatch(
           "fetchPrecastProjects",
-          res.data.stories.map(item => {
+          res.data.stories.map((item) => {
             return {
               id: item.content._uid,
               title: item.content.title,
@@ -85,24 +85,24 @@ export default {
                 ? item.content.image
                 : [item.content.image],
               date: item.content.date,
-              slug: item.slug
+              slug: item.slug,
             };
           })
         );
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
 
-      return {
-        ...projectData,
-        imageHeight: null,
-        imageWidth: null
-      }
-    },
-    methods: {
-      setImageHeight() {
-        switch (this.$vuetify.breakpoint.name) {
+    return {
+      ...projectData,
+      imageHeight: null,
+      imageWidth: null,
+    };
+  },
+  methods: {
+    setImageHeight() {
+      switch (this.$vuetify.breakpoint.name) {
         case "xs":
           this.imageHeight = 200;
           this.imageWidth = 300;
@@ -123,15 +123,15 @@ export default {
           this.imageHeight = 350;
           this.imageWidth = "100%";
           break;
-        }
       }
+    },
   },
   computed: {
     ...mapGetters({
       getPrecastProjects: "getPrecastProjects",
       // getThumbnailImageHeight: "images/getThumbnailImageHeight",
       // getThumbnailImageWidth: "images/getThumbnailImageWidth"
-    })
+    }),
   },
   mounted() {
     window.onNuxtReady(() => {
@@ -140,6 +140,6 @@ export default {
   },
   created() {
     this.setImageHeight();
-  }
+  },
 };
 </script>

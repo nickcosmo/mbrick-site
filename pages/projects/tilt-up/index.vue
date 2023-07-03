@@ -24,10 +24,10 @@
     <v-row class="ma-0">
       <v-col cols="12" class="ma-0 pa-0 d-flex flex-wrap justify-center">
         <nuxt-link
-          style="padding: 0; margin: 0;"
+          style="padding: 0; margin: 0"
           v-for="project in getTiltUpProjects"
           :key="project.id"
-          :to="'/projects/tilt-up/' + project.id"
+          :to="'/projects/tilt-up/' + project.slug"
         >
           <v-img
             class="image-hover align-center text-center ma-5"
@@ -63,18 +63,18 @@ export default {
     if (context.store.state.projects.tiltup.length) {
       return {
         imageHeight: null,
-        imageWidth: null
+        imageWidth: null,
       };
     }
     const projectData = await context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
-        starts_with: "tiltupprojects/"
+        starts_with: "tiltupprojects/",
       })
-      .then(res => {
+      .then((res) => {
         context.store.dispatch(
           "fetchTiltUpProjects",
-          res.data.stories.map(item => {
+          res.data.stories.map((item) => {
             return {
               id: item.content._uid,
               title: item.content.title,
@@ -85,19 +85,19 @@ export default {
                 ? item.content.image
                 : [item.content.image],
               date: item.content.date,
-              slug: item.slug
+              slug: item.slug,
             };
           })
         );
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
-      return {
-        ...projectData,
-        imageHeight: null,
-        imageWidth: null
-      }
+    return {
+      ...projectData,
+      imageHeight: null,
+      imageWidth: null,
+    };
   },
   methods: {
     setImageHeight() {
@@ -123,14 +123,14 @@ export default {
           this.imageWidth = "100%";
           break;
       }
-    }
+    },
   },
   computed: {
     ...mapGetters({
       getTiltUpProjects: "getTiltUpProjects",
       // getThumbnailImageHeight: "images/getThumbnailImageHeight",
       // getThumbnailImageWidth: "images/getThumbnailImageWidth"
-    })
+    }),
   },
   mounted() {
     window.onNuxtReady(() => {
@@ -139,6 +139,6 @@ export default {
   },
   created() {
     this.setImageHeight();
-  }
+  },
 };
 </script>

@@ -10,31 +10,31 @@ export const state = () => ({
 });
 
 export const getters = {
-         getPrecastProjects: state => state.projects.precast,
-         getSinglePrecastProject: state => projectId =>
-           state.projects.precast.find(project => project.id === projectId),
-         getTiltUpProjects: state => state.projects.tiltup,
-         getSingleTiltUpProject: state => projectId =>
-           state.projects.tiltup.find(project => project.id === projectId),
-         getEndicottProducts: state => state.products.endicott,
-         getEndicottProductsPaginated: state => page => {
-           const start = page * 20;
-           const end = start + 20;
-           if (state.products.endicott.length > 0) {
-             return state.products.endicott.slice(start, end);
-           }
-           return [];
-         },
-         getMetroProducts: state => state.products.metro,
-         getMetroProductsPaginated: state => page => {
-           const start = page * 20;
-           const end = start + 20;
-           if (state.products.metro.length > 0) {
-             return state.products.metro.slice(start, end);
-           }
-           return [];
-         }
-       };
+  getPrecastProjects: state => state.projects.precast,
+  getSinglePrecastProject: state => projectSlug =>
+    state.projects.precast.find(project => project.slug === projectSlug),
+  getTiltUpProjects: state => state.projects.tiltup,
+  getSingleTiltUpProject: state => projectSlug =>
+    state.projects.tiltup.find(project => project.slug === projectSlug),
+  getEndicottProducts: state => state.products.endicott,
+  getEndicottProductsPaginated: state => page => {
+    const start = page * 20;
+    const end = start + 20;
+    if (state.products.endicott.length > 0) {
+      return state.products.endicott.slice(start, end);
+    }
+    return [];
+  },
+  getMetroProducts: state => state.products.metro,
+  getMetroProductsPaginated: state => page => {
+    const start = page * 20;
+    const end = start + 20;
+    if (state.products.metro.length > 0) {
+      return state.products.metro.slice(start, end);
+    }
+    return [];
+  }
+};
 
 export const mutations = {
   setPrecastProjects: (state, payload) => (state.projects["precast"] = payload),
