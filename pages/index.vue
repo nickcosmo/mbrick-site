@@ -24,18 +24,12 @@
       <v-row
         class="mt-md-12 mx-md-12 mx-3 mt-3 flex-column-reverse flex-md-row"
       >
+        >
         <v-col class="col-12 col-md-7">
           <v-card
             height="100%"
             color="#212121"
-            class="
-              d-flex
-              justify-center
-              flex-column
-              elevation-0
-              transparent
-              text-left
-            "
+            class="d-flex justify-center flex-column elevation-0 transparent text-left"
             style="wordbreak: normal"
           >
             <v-card-title class="text-md-h2 text-sm-h3 text-h4"
@@ -77,14 +71,7 @@
           <v-card
             height="100%"
             color="#212121"
-            class="
-              d-flex
-              justify-center
-              flex-column
-              elevation-0
-              transparent
-              text-left
-            "
+            class="d-flex justify-center flex-column elevation-0 transparent text-left"
           >
             <v-card-title class="text-md-h2 text-sm-h3 text-h4">
               ARCHITECTS SPECIFY OUR PRODUCTS
@@ -127,7 +114,7 @@
 export default {
   data() {
     return {
-      imageHeight: null
+      imageHeight: null,
     };
   },
   methods: {
@@ -149,7 +136,7 @@ export default {
           this.imageHeight = 500;
           break;
       }
-    }
+    },
   },
   mounted() {
     window.onNuxtReady(() => {
@@ -158,6 +145,6 @@ export default {
   },
   created() {
     this.setImageHeight();
-  }
+  },
 };
 </script>

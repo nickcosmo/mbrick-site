@@ -69,7 +69,7 @@ export default {
     const projectData = await context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
-        starts_with: "precast-projects/",
+        starts_with: "precast/",
       })
       .then((res) => {
         context.store.dispatch(

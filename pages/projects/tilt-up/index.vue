@@ -69,7 +69,7 @@ export default {
     const projectData = await context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
-        starts_with: "tiltupprojects/",
+        starts_with: "tilt-up/",
       })
       .then((res) => {
         context.store.dispatch(
