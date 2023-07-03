@@ -29,21 +29,21 @@
         </template>
         <v-list color="#FAFAFA">
           <v-list-item-group>
-            <nuxt-link to="/products/embedded_brick">
+            <nuxt-link to="/products/embedded-brick">
               <v-list-item>
                 <v-list-item-title class="black--text" nuxt>
                   Embedded Brick
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>
-            <nuxt-link to="/products/faux_brick_and_stone">
+            <nuxt-link to="/products/faux-brick-and-stone">
               <v-list-item>
                 <v-list-item-title class="black--text" nuxt>
                   Faux Brick and Stone
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>
-            <nuxt-link to="/products/thin_brick">
+            <nuxt-link to="/products/thin-brick">
               <v-list-item>
                 <v-list-item-title class="black--text" nuxt>
                   Thin Brick

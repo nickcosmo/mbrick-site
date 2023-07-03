@@ -11,7 +11,7 @@
           <template v-slot:activator>
             <v-list-item-title> Products </v-list-item-title>
           </template>
-          <nuxt-link to="/products/embedded_brick">
+          <nuxt-link to="/products/embedded-brick">
             <v-list-item class="pl-10" nuxt link>
               <v-list-item-title> Embedded Brick </v-list-item-title>
             </v-list-item>
@@ -21,7 +21,7 @@
               <v-list-item-title> Concrete Patterns </v-list-item-title>
             </v-list-item>
           </nuxt-link>
-          <nuxt-link to="/products/thin_brick">
+          <nuxt-link to="/products/thin-brick">
             <v-list-item class="pl-10" nuxt link>
               <v-list-item-title> Thin Brick </v-list-item-title>
             </v-list-item>
@@ -79,7 +79,7 @@ export default {
   watch: {
     group(newVal, oldVal) {
       if (newVal && newVal !== 1 && newVal !== 2) {
-        this.status = false
+        this.status = false;
         this.$emit("close");
       }
     },

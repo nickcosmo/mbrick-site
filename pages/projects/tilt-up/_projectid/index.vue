@@ -40,7 +40,11 @@
       >
         {{ project.title }}
       </v-img>
-      <v-row v-if="project.description" no-gutters class="align-center justify-center px-5 px-md-0">
+      <v-row
+        v-if="project.description"
+        no-gutters
+        class="align-center justify-center px-5 px-md-0"
+      >
         <v-col class="col-12 col-md-7">
           <v-card class="pa-0" tile>
             <v-card-text class="pb-0">
@@ -62,16 +66,19 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row no-gutters class="align-center justify-center px-5 px-md-0 mx-md-n5">
+      <v-row
+        no-gutters
+        class="align-center justify-center px-5 px-md-0 mx-md-n5"
+      >
         <v-col class="col-12 col-md-7 d-flex flex-wrap">
           <v-img
             v-for="image in images"
             :key="image.id"
-            height="352"
-            width="300"
+            height="150"
+            width="150"
+            class="ma-2"
             :src="image.filename"
             :alt="image.alt"
-            class="ma-md-3 my-3"
             @click="showCarousel = !showCarousel"
             style="cursor: pointer;"
           ></v-img>
