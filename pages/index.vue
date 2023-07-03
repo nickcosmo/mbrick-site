@@ -24,7 +24,6 @@
       <v-row
         class="mt-md-12 mx-md-12 mx-3 mt-3 flex-column-reverse flex-md-row"
       >
-        >
         <v-col class="col-12 col-md-7">
           <v-card
             height="100%"
