@@ -3,9 +3,7 @@
     <v-overlay z-index="500" opacity="0.9" v-if="showCarousel">
       <v-row>
         <v-btn @click="showCarousel = !showCarousel" fab fixed top right dark>
-          <v-icon dark>
-            mdi-close
-          </v-icon>
+          <v-icon dark> mdi-close </v-icon>
         </v-btn>
         <v-col class="mx-auto col-7 col-md-12">
           <v-carousel height="imageHeight">
@@ -26,15 +24,7 @@
     <v-col cols="12" class="ma-0 pa-0">
       <v-img
         max-height="300"
-        class="
-          d-flex
-          justify-center
-          align-center
-          text-center
-          text-md-h1
-          text-h2
-          text-uppercase
-        "
+        class="d-flex justify-center align-center text-center text-md-h1 text-h2 text-uppercase"
         gradient="to bottom, rgba(0, 0, 0, 0), 10%, #121212"
         :src="require('@/static/brick-hero-alt.jpg')"
       >
@@ -80,7 +70,7 @@
             :src="image.filename"
             :alt="image.alt"
             @click="showCarousel = !showCarousel"
-            style="cursor: pointer;"
+            style="cursor: pointer"
           ></v-img>
         </v-col>
       </v-row>
@@ -90,15 +80,47 @@
 
 <script>
 export default {
-  asyncData(context) {
+  async asyncData(context) {
     if (context.store.state.projects.tiltup.length) {
       return {
         images: [],
         imageHeight: null,
-        showCarousel: false
+        showCarousel: false,
       };
     } else {
-      context.redirect("/");
+      const projectData = await context.app.$storyapi
+        .get("cdn/stories", {
+          version: context.isDev ? "draft" : "published",
+          starts_with: "projects/tilt-up/",
+        })
+        .then((res) => {
+          context.store.dispatch(
+            "fetchTiltUpProjects",
+            res.data.stories.map((item) => {
+              return {
+                id: item.content._uid,
+                title: item.content.title,
+                description: item.content.description,
+                location: item.content.location,
+                precaster: item.content.precaster,
+                images: Array.isArray(item.content.image)
+                  ? item.content.image
+                  : [item.content.image],
+                date: item.content.date,
+                slug: item.slug,
+              };
+            })
+          );
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+      return {
+        ...projectData,
+        images: [],
+        imageHeight: null,
+        showCarousel: false,
+      };
     }
   },
   computed: {
@@ -106,10 +128,10 @@ export default {
       return this.$store.getters.getSingleTiltUpProject(
         this.$route.params.projectid
       );
-    }
+    },
   },
   created() {
     this.images = this.project.images;
-  }
+  },
 };
 </script>
