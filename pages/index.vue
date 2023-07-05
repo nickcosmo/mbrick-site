@@ -149,6 +149,6 @@ export default {
 
 <style scoped>
 .v-image {
-  height: 100vh;
+  height: 100vh - 100px;
 }
 </style>
