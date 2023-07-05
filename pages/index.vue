@@ -3,7 +3,6 @@
     <!-- <v-col></v-col> -->
     <v-col cols="12" class="text-center ma-0 pa-0">
       <v-img
-        max-height="700"
         width="100%"
         class="d-flex align-center mb-10"
         eager
@@ -147,3 +146,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.v-image {
+  height: 100vh;
+}
+</style>
