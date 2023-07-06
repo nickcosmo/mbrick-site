@@ -97,9 +97,15 @@
               INNOVATIVE SOLUTIONS FOR ARCHITECTS
             </v-card-title>
             <v-card-text class="text-md-h5 text-sm-h6 text-body-1 mt-md-5">
-              Include IBS in your Master Specs.
-              <strong class="white--text">Click here</strong> to download
-              Embedded Brick SCI 3-Part Specs and Embedded CMU Specs.
+              Include Innovative Brick Systems in your Master Specs
+              <a href="https://catalogs.mbrick.com/view/240047629/">
+                <strong class="white--text">Click Here</strong>
+              </a>
+              to download Embedded Brick, Tile, and Stone specifications. For
+              Concrete Textures and Faux Brick
+              <a href="https://catalogs.mbrick.com/view/672042111/">
+                <strong class="white--text">Click Here</strong> </a
+              >.
             </v-card-text>
           </v-card>
         </v-col>
