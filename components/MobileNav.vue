@@ -42,6 +42,11 @@
             </v-list-item>
           </nuxt-link>
         </v-list-group>
+        <nuxt-link to="/patents">
+          <v-list-item nuxt link>
+            <v-list-item-title> Patents </v-list-item-title>
+          </v-list-item>
+        </nuxt-link>
         <nuxt-link to="/3dmodels">
           <v-list-item nuxt link>
             <v-list-item-title> 3D Models </v-list-item-title>
