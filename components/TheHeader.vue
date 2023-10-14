@@ -79,15 +79,20 @@
           </v-list-item-group>
         </v-list>
       </v-menu>
+      <nuxt-link to="/patents">
+        <v-btn class="black--text" height="100%" x-large nuxt tile text>
+          Patents
+        </v-btn>
+      </nuxt-link>
       <nuxt-link to="/3dmodels">
-        <v-btn class="black--text" height="100%" nuxt x-large tile text
-          >3D Models</v-btn
-        >
+        <v-btn class="black--text" height="100%" nuxt x-large tile text>
+          3D Models
+        </v-btn>
       </nuxt-link>
       <nuxt-link to="/video_tutorials">
-        <v-btn class="black--text" height="100%" x-large nuxt tile text
-          >Video Tutorials</v-btn
-        >
+        <v-btn class="black--text" height="100%" x-large nuxt tile text>
+          Video Tutorials
+        </v-btn>
       </nuxt-link>
       <nuxt-link to="/about">
         <v-btn class="black--text" height="100%" x-large nuxt tile text>

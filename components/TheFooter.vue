@@ -18,12 +18,13 @@
         <v-row no-gutters class="justify-center justify-md-start">
           <a href="mailto:contact@mbrick.com">
             <v-btn
-              class="my-md-0 my-1 mx-0 px-3"
-              :x-large="!isMobile"
+              class="my-md-0 my-1 mx-0 px-3 no-background-hover"
+              :medium="!isMobile"
               :small="isMobile"
               :block="isMobile"
               rounded
               text
+              :ripple="false"
             >
               <v-icon class="pr-2">mdi-email</v-icon>contact@mbrick.com
             </v-btn>
@@ -32,12 +33,13 @@
         <v-row no-gutters class="justify-center justify-md-start">
           <a href="tel:1-800-413-4588">
             <v-btn
-              class="my-md-0 my-1 mx-0 px-3"
-              :x-large="!isMobile"
+              class="my-md-0 my-1 mx-0 px-3 no-background-hover"
+              :medium="!isMobile"
               :small="isMobile"
               :block="isMobile"
               rounded
               text
+              :ripple="false"
             >
               <v-icon class="pr-2">mdi-phone</v-icon>1-800-413-4588
             </v-btn>
@@ -46,13 +48,14 @@
         <v-row no-gutters class="justify-center justify-md-start">
           <a>
             <v-btn
-              class="my-md-0 my-1 mx-0 px-3"
-              :x-large="!isMobile"
+              class="my-md-0 my-1 mx-0 px-3 no-background-hover"
+              :medium="!isMobile"
               :small="isMobile"
               :block="isMobile"
               rounded
               text
               style="overflow: hidden"
+              :ripple="false"
             >
               <v-icon class="pr-2">mdi-home</v-icon>
               1756 Panorama Point, Lafayette CO
@@ -62,12 +65,13 @@
         <v-row no-gutters class="justify-center justify-md-start">
           <a href="/">
             <v-btn
-              class="my-md-0 my-1 mx-0 px-3"
-              :x-large="!isMobile"
+              class="my-md-0 my-1 mx-0 px-3 no-background-hover"
+              :medium="!isMobile"
               :small="isMobile"
               :block="isMobile"
               text
               rounded
+              :ripple="false"
             >
               <v-icon class="pr-2">mdi-clock</v-icon>
               Mon - Fri: 8AM - 5PM MST
@@ -87,6 +91,12 @@
 
 <script>
 export default {
-  props: ["isMobile"]
+  props: ["isMobile"],
 };
 </script>
+
+<style lang="scss" scoped>
+.no-background-hover::before {
+  background-color: transparent !important;
+}
+</style>
