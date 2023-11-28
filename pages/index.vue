@@ -1,6 +1,5 @@
 <template>
   <v-row justify="center" align="center">
-    <!-- <v-col></v-col> -->
     <v-col cols="12" class="text-center ma-0 pa-0">
       <v-img
         width="100%"
@@ -21,6 +20,9 @@
         </a>
       </v-img>
       <v-row
+        justify="center"
+        align="center"
+        style="max-width: 1200px"
         class="mt-md-12 mx-md-12 mx-3 mt-3 flex-column-reverse flex-md-row"
       >
         <v-col class="col-12 col-md-7">
