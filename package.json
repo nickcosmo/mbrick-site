@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-vuetify",
+  "name": "mbrick-site",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "deploy": "npm run generate && firebase deploy"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^2.4.0",
     "axios": "^0.21.4",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
