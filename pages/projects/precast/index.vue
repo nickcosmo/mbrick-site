@@ -70,6 +70,7 @@ export default {
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
         starts_with: "projects/precast/",
+        per_page: 50, // note this will need to change once data gets paginated!
       })
       .then((res) => {
         context.store.dispatch(

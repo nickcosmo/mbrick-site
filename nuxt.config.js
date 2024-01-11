@@ -41,6 +41,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     ["@nuxtjs/dotenv"],
+    ["@nuxtjs/sitemap"],
     [
       "storyblok-nuxt",
       {
@@ -52,6 +53,50 @@ export default {
       }
     ]
   ],
+
+  sitemap: {
+    routes: [
+      "projects/precast/walters-and-wolf-1180-main",
+      "projects/precast/stubbes-precast-kokomo",
+      "projects/precast/cast-stone-river-front",
+      "projects/precast/cast-stone-hamblin",
+      "projects/precast/cast-stone-hamblin",
+      "projects/precast/clark-pacific-placer-county",
+      "projects/precast/coreslab-ct-108x-bronx",
+      "projects/precast/coreslab-bayside-ny",
+      "projects/precast/coreslab-mt-sinai-hospital",
+      "projects/precast/dura-stress-duke-power",
+      "projects/precast/dura-stress-the-hub",
+      "projects/precast/molin-precast-berg",
+      "projects/precast/stress-con-fort-carson-barracks",
+      "projects/precast/bethlehem-precast-rboc",
+      "projects/precast/pgh-arden-station",
+      "projects/precast/metromont-sc-mint-street",
+      "projects/precast/metromont-sc-ncino",
+      "projects/precast/gage-brothers-jefferson-hs",
+      "projects/precast/gage-brothers-270-hennipen",
+      "projects/precast/gage-brothers-sioux-center-high-school",
+      "projects/precast/gage-brothers-our-lady-of-grace",
+      "projects/precast/gage-brothers-the-expo",
+      "projects/precast/kerkstra-precast-goshen",
+      "projects/precast/coreslab-white-plains-hospital",
+      "projects/precast/global-precast-stock-yards",
+      "projects/precast/global-precast-west-donlands",
+      "projects/precast/global-precast-indigo-3",
+      "projects/precast/clark-pacific-kettner-building",
+      "projects/precast/olympia-precast-wsu",
+      "projects/precast/virgin-hotel",
+      "projects/precast/braves-stadium",
+      "projects/precast/auburn-university",
+      "projects/precast/wayzata-parking-deck",
+      "projects/tilt-up/scientech-building",
+      "projects/tilt-up/iron-bridge",
+      "projects/tilt-up/cary-christian",
+      "projects/tilt-up/bedford-baptist",
+      "projects/tilt-up/bay-meadows",
+      "projects/tilt-up/american-lafrance"
+    ]
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
