@@ -55,6 +55,7 @@ export default {
   ],
 
   sitemap: {
+    hostname: "https://mbrick.com",
     routes: [
       "projects/precast/walters-and-wolf-1180-main",
       "projects/precast/stubbes-precast-kokomo",
