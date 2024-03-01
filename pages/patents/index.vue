@@ -139,63 +139,71 @@ export default {
     return {
       runningBondPatents: [
         {
-          linerNumber: "SM 100 T4",
+          linerNumber: "110.03",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T5",
+          linerNumber: "110.04",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T6",
+          linerNumber: "110.05",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T7",
+          linerNumber: "110.06",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T8",
+          linerNumber: "110.07",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T9",
+          linerNumber: "110.07S",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T10",
+          linerNumber: "110.07LF",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T11",
+          linerNumber: "110.08",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T12",
+          linerNumber: "110.09",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T13",
+          linerNumber: "110.011",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T14",
+          linerNumber: "110.0318",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T15",
+          linerNumber: "110.0518",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T16",
+          linerNumber: "110.0608",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T17",
+          linerNumber: "113.0608",
           patentNumber: "D675,346",
         },
         {
-          linerNumber: "SM 100 T18",
+          linerNumber: "S100.0015",
+          patentNumber: "D675,346",
+        },
+        {
+          linerNumber: "S100.0018",
+          patentNumber: "D675,346",
+        },
+        {
+          linerNumber: "S110.01",
           patentNumber: "D675,346",
         },
       ],
